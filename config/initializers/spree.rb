@@ -5,7 +5,7 @@ Spree.config do |config|
   # Core:
 
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = "EUR"
 
   # from address for transactional emails
   config.mails_from = "store@example.com"
@@ -58,6 +58,8 @@ Spree.config do |config|
   #   server: Rails.env.production? ? 'production' : 'test',
   #   test_mode: !Rails.env.production?
   # )
+
+  config.roles.assign_permissions :merchant, ['Spree::PermissionSets::OrderDisplay']
 end
 
 Spree::Frontend::Config.configure do |config|
@@ -90,3 +92,5 @@ Spree.user_class = "Spree::LegacyUser"
 # the class name:
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
+
+Spree::Role.find_or_create_by(name: 'merchant')
