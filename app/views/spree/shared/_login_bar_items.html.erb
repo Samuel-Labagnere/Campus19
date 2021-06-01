@@ -2,5 +2,32 @@
   <li><%= link_to t('spree.my_account'), spree.account_path %></li>
   <li><%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %></li>
 <% else %>
-  <li id="link-to-login"><%= link_to t('spree.login'), spree.login_path %></li>
+
+  <%
+=begin%>
+ <li id="link-to-login"><%= link_to t('spree.login'), spree.login_path %></li> 
+<%
+=end %>
+
+<!-- ancien boutton -->
+
+  <button class="open-pop-up" onclick="openForm()">Login</button>
+  <div class="pop-up">
+    <button class="close-pop-up cross" onclick="closeForm()">x</button>
+    <div>
+      <% if flash[:alert] %>
+        <div class="flash errors"><%= flash[:alert] %></div>
+      <% end %>
+      
+      <% @body_id = 'login' %>
+      <div id="existing-customer">
+        <h6><%= t('spree.login_as_existing') %></h6>
+        <div data-hook="login">
+          <%= render partial: 'spree/shared/login' %>
+          <%= t('spree.or') %>&nbsp;<%= link_to t('spree.create_a_new_account'), spree.signup_path %> | <%= link_to t('spree.forgot_password'), spree.recover_password_path %>
+        </div>
+      </div>
+      <div data-hook="login_extras"></div>
+    </div>
+  </div>
 <% end %>
