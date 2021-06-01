@@ -1,9 +1,34 @@
 <nav id="top-nav-bar" class="columns ten">
   <ul id="nav-bar" class="inline" data-hook>
+    <li><a href="https://google.com">Collection</a></li>
+    <li><a href="https://google.com">Nouveautés</a></li>
+    <li><a href="https://google.com">Sweat</a></li>
+    <li><a href="https://google.com">T-Shirt</a></li>
+    <li><a href="https://google.com">Carte</a></li>
     <%= render 'spree/shared/locale_selector' %>
     <%= render 'spree/shared/login_bar_items' %>
-    <li id="search-bar" data-hook>
+    <li id="link-to-cart" data-hook>
+      <noscript>
+        <%= link_to t('spree.cart'), spree.cart_path %>
+      </noscript>
+      &nbsp;
+    </li>
+        <li id="search-bar" data-hook>
       <%= render partial: 'spree/shared/search' %>
     </li>
   </ul>
+  <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
 </nav>
+
+<!--<nav class="columns sixteen">
+  <ul id="main-nav-bar" class="inline" data-hook>
+    <li id="home-link" data-hook><%= link_to t('spree.home'), spree.root_path %></li>
+    <li id="link-to-cart" data-hook>
+      <noscript>
+        <%= link_to t('spree.cart'), spree.cart_path %>
+      </noscript>
+      &nbsp;
+    </li>
+  </ul>
+  <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
+</nav>-->

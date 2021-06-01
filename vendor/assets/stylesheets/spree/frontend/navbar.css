@@ -1,0 +1,53 @@
+header a{
+    color: black !important;
+}
+header {
+    width: 100%;
+}
+#logo{
+    width: fit-content;
+}
+#logo img{
+    /*width: 50px;*/
+}
+#nav-bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cross{
+    font-size: 2.5em;
+    background-color: black;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+.pop-up {
+    background-color: pink;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+nav#top-nav-bar ul li a {
+    text-decoration: none !important;
+    text-transform: none !important;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#top-nav-bar{
+    width: 80%;
+   margin: 0 !important;
+}
+#top-nav-bar li {
+    margin-bottom: 0!important;
+    padding-left: 0 !important;
+}
