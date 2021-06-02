@@ -1,0 +1,15 @@
+.continue_cart{
+    text-decoration: underline;
+}
+#clear_cart{
+    color: black;
+    background-color: transparent;
+    border-color: #ed5466;
+    border-radius: 10%;
+}
+
+#empty-cart{
+    margin-top: 0px;
+    float: right;
+}
+
