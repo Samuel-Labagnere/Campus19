@@ -1,15 +1,45 @@
 .continue_cart{
     text-decoration: underline;
 }
+
+#empty-cart{
+    margin-top: -41px;
+    float: right;
+    display: flex;
+    padding-top: 0;
+}
+#update-button{
+    color: black;
+    background-color: transparent;
+    border-color: #ed5466;
+    border-radius: 1em;
+    margin-right: 1em;
+}
 #clear_cart{
     color: black;
     background-color: transparent;
     border-color: #ed5466;
-    border-radius: 10%;
+    border-radius: 1em;
 }
 
-#empty-cart{
-    margin-top: 0px;
-    float: right;
+
+.delete{
+    position: absolute;
+}
+
+
+
+#checkout-link{
+    color: black;
+    text-transform: uppercase;
+
+    background-color: #ed5466;
+    border-radius: 1em;
+    border: none;
+
+    padding-left: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 0;
 }
 

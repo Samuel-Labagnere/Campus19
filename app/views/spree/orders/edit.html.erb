@@ -1,5 +1,6 @@
 <% @body_id = 'cart' %>
 <div data-hook="cart_container">
+
   <h1>Votre Panier</h1>
 
   <% if @order.line_items.empty? %>
@@ -12,6 +13,8 @@
   <% else %>
 
   <div id="empty-cart" data-hook>
+    <%= button_tag t('Rafraîchir'), class: "primary", id: "update-button" %>
+    
     <%= form_tag empty_cart_path, method: :put do %>
     <p id="clear_cart_link" data-hook>
     <%= submit_tag t('spree.empty_cart'), id: 'clear_cart' %>
@@ -27,21 +30,15 @@
     <div data-hook="outside_cart_form">
       <%= form_for @order, url: update_cart_path, html: {id: 'update-cart'} do |order_form| %>
         <div data-hook="inside_cart_form">
-
           <div data-hook="cart_items">
-            <%= render 'spree/orders/form', order_form: order_form %>
+          <%= render 'spree/orders/form', order_form: order_form %>
           </div>
 
           <div class="links columns sixteen alpha omega" data-hook="cart_buttons">
-            <%= button_tag t("spree.update"), class: "primary", id: "update-button" %>
-
-            <%= button_tag class: 'button checkout primary', id: 'checkout-link', name: 'checkout' do %>
-              <%= t('spree.checkout') %>
-            <% end %>
-          </div>
+                    <%= button_tag t('Passer au paiement'), class: 'button checkout primary', id: 'checkout-link', name: 'checkout'%>
+      </div>
         </div>
       <% end %>
     </div>
-
   <% end %>
 </div>
