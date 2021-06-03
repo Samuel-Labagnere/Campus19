@@ -15,3 +15,18 @@ body {
   padding: 0 80px;
   width: 100%;
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+.wrapper_content{
+  display: flex;
+  flex-wrap: wrap;
+}
