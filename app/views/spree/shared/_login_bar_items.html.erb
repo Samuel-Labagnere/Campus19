@@ -1,5 +1,5 @@
 <% if spree_current_user %>
-  <li><%= link_to t('Profil'), spree.account_path, class: 'profile' %></li>
+  <li class="login"><%= link_to t('Profil'), spree.account_path, class: 'profile' %></li>
   <!--<li><%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %></li>-->
 <% else %>
 
@@ -11,7 +11,7 @@
 
 <!-- ancien boutton -->
 
-  <button class="open-pop-up" onclick="openForm()">Login</button>
+  <button class="open-pop-up login" onclick="openForm()">Login</button>
   <div class="pop-up">
     <button class="close-pop-up cross" onclick="closeForm()">x</button>
     <div>
