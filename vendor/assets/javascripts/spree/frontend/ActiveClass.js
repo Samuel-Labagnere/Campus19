@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 //     var imgRotateInvers = document.querySelector('.imgRotateInvers');
 //     var slidebar_button = document.querySelector('.slidebar_button');
 //     var sidebar_hidden = document.querySelector('.sidebar_hidden');
@@ -9,5 +9,11 @@
 //     imgRotateInvers.classList.toggle('imgRotate');
 //     sidebar_hidden.classList.toggle('sidebar_visible');
 // }
-// }) 
+// 
 
+let fleche = document.querySelector(".imgRotateInvers");
+document.querySelector('.title_summary').addEventListener('click', function(){
+fleche.classList.toggle('imgRotate')
+});
+
+}) 
