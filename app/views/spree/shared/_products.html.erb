@@ -22,23 +22,37 @@
 </div>
 
 <% if products.any? %>
-  <ul id="products" class="inline product-listing" data-hook>
+  <ul id="products" class="inline product-listing ul-product-list" data-hook>
     <% products.each do |product| %>
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-      <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", name: "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+
+      <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", name: "classes") %> li-product-list" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+
         <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
-          <div class="product-image">
+
+          <div class="product-image"> <!-- image produit -->
             <%= link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
           </div>
-          <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %>
+
+          <%= link_to truncate(product.name, length: 50), url, class: 'nom', itemprop: "name", title: product.name %> <!-- Nom produit -->
+
+          <%= link_to truncate(product.slug, length: 50), url, class: 'info', itemprop: "slug", title: product.slug %> <!-- Collection produit -->
+
           <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <% if price = product.price_for(current_pricing_options) %>
+
               <span class="price selling" itemprop="price" content="<%= price.to_d %>">
                 <%= price.to_html %>
-              </span>
+              </span> <!-- Prix produit -->
+
             <% end %>
             <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
           </span>
+          <div class="colors">
+            <button class="shirt shirt-white"></button>
+            <button class="shirt shirt-blue"></button>
+            <button class="shirt shirt-black"></button>
+          </div>
         <% end %>
       </li>
     <% end %>
@@ -49,3 +63,23 @@
 <% if paginated_products.respond_to?(:total_pages) %>
   <%= paginate paginated_products %>
 <% end %>
+
+<!--<div class="containeer">
+  <div class="item-group">
+    <div class="item">
+      <img src="https://cdn.manelli.com/12932-thickbox_default/tee-shirt-de-boulanger-blanc.jpg" class="img-shirt-white" alt="">
+      <div class="infos-grid">
+        <p>Granite</p>
+        <h5 class="name">Crew Curve-Hem</h5>
+        <h5>$48</h5>
+        <div class="colors">
+          <button class="shirt shirt-white"></button>
+          <button class="shirt shirt-blue"></button>
+          <button class="shirt shirt-black"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

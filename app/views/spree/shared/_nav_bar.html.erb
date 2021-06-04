@@ -1,9 +1,27 @@
 <nav id="top-nav-bar" class="columns ten">
   <ul id="nav-bar" class="inline" data-hook>
+    <li class="left-side-nav"><a href="https://google.com">Collection</a></li>
+    <li class="left-side-nav"><a href="https://google.com">Nouveautés</a></li>
+    <li class="left-side-nav"><a href="https://google.com">Sweat</a></li>
+    <li class="left-side-nav"><a href="https://google.com">T-Shirt</a></li>
+    <li class="left-side-nav"><a href="https://google.com">Nos magasins</a></li>
     <%= render 'spree/shared/locale_selector' %>
-    <%= render 'spree/shared/login_bar_items' %>
-    <li id="search-bar" data-hook>
+    </li>
+    <li id="search-bar" data-hook onclick="extendHeader()">
       <%= render partial: 'spree/shared/search' %>
     </li>
+    <button class="cross-btn" onclick="reduceHeader()">
+        <span class="cross-line cross-line-1"></span>
+        <span class="cross-line cross-line-2"></span>
+      </button>
+    <%= render 'spree/shared/login_bar_items' %>
+    <li id="link-to-cart" data-hook>
+    <!--<img src="./vendor/assets/images/spree/frontend/panier.svg">-->
+      <noscript>
+        <%= link_to t('Panier'), spree.cart_path %>
+      </noscript>
+      &nbsp;
+    </li>
   </ul>
+  <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
 </nav>
