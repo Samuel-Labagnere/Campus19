@@ -20,24 +20,6 @@ header {
     flex-wrap: wrap;
 }
 
-.cross{
-    font-size: 2.5em;
-    background-color: black;
-    right: 0;
-    top: 0;
-    position: absolute;
-}
-
-.pop-up {
-    background-color: pink;
-    width: 200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
 nav#top-nav-bar ul li a {
     text-decoration: none !important;
     text-transform: none !important;

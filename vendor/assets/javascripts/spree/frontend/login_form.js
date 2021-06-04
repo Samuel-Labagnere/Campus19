@@ -1,7 +1,9 @@
 function openForm() {
-    document.querySelector(".pop-up").style.display = "block";
+    $(".pop-up").css("display", "block")
+    $(".blur").css("display", "block")
   }
   
   function closeForm() {
-    document.querySelector(".pop-up").style.display = "none";
+    $(".pop-up").css("display", "none")
+    $(".blur").css("display", "none")
   }

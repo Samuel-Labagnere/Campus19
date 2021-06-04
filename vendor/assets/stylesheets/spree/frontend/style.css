@@ -31,3 +31,14 @@ html {
   display: flex;
   flex-wrap: wrap;
 }
+
+.button {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.button-primary {
+  background-color: #ED5466 !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+}

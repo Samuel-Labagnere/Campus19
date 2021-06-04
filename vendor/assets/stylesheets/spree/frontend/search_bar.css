@@ -47,40 +47,28 @@
     height: 250px;
   }
   
-  /* .inputgroup-search-clicked {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50vw;
-  } */
-  .cross-btn {
-    border: none;
-    padding: 20px 20px;
-    background-color: #F4E2E4;
-    cursor: pointer;
-    border-radius: 100px;
-    display: block;
-    transition: all 0.5s ease-in-out;
-    margin-left: 100px;
-  }
-  /*
-  .cross {
-    cursor: pointer;
-    width: 12px;
-    height: 12px;
-  }
-  .cross-btn:hover {
-    background-color: #ED5466;
-  } */
-
-  #search-bar {
-    display: inline-block;
-    width: fit-content;
-    display: flex;
+.cross-btn {
+  border: none;
+  padding: 20px 20px;
+  background-color: #F4E2E4;
+  cursor: pointer;
+  border-radius: 100px;
+  display: block;
+  transition: all 0.5s ease-in-out;
+  margin-left: 100px;
 }
+
+#search-bar {
+  display: inline-block;
+  width: fit-content;
+  display: flex;
+}
+
 .cross-btn {
   position: relative;
   display: none;
 }
+
 .cross-line {
   position: absolute;
   top: 50%;
