@@ -10,51 +10,43 @@
 
 <!-- Add active class to list item to have it open by default ?-->
 
-<div id="sidebar_list" class="sidebar_list">
-  <ul>
-    <li class="border_sidebar">
-      <div class="slidebar_button">
-        <a>Taille</a>
-        <i><img src="<%= image_url('up.svg') %>" class="imgRotateInvers"></i>
-      </div>
-      <ul class="sidebar_hidden">
-        <li class="flex_li"> 
-          <input type="checkbox">
-          <a>S</a>
-        </li>
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>M</a>
-        </li>
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>L</a>
-        </li>
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>XL</a>
-        </li>
-      </ul>
-    </li>
-     <li class="border_sidebar2">
-      <div class="slidebar_button2">
-        <a>oui</a>
-        <i><img src="<%= image_url('up.svg') %>" class="imgRotateInvers"></i>
-      </div>
-      <ul class="sidebar_hidden2">
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>Nouveautés</a>
-        </li>
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>Prix croissant</a>
-        </li>
-        <li class="flex_li">
-          <input type="checkbox">
-          <a>Prix décroissant</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<details>
+  <summary class="list">
+    <div class="title_summary">
+      Taille 
+      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+    </div>
+  </summary>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>S</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>M</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>L</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>XL</p>
+  </div>
+  </details>
+  <details>
+  <summary class="list">
+    <div class="title_summary">
+      Trier par 
+      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+    </div>
+  </summary>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>Prix Croissant</p>
+  </div>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>Prix décroissant</p>
+  </div>
+</details>
