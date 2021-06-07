@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Gilroy";
+    src: url('../../../fonts/AnyConv.com__Gilroy-ExtraBold.woff') format('woff');
+}
+
+/* @font-face {
+    font-family: "Lato";
+    src: url("../../../fonts/Lato-Regular.ttf") format("ttf");
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap%27'); */
+
+
+h1 {
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 64px;
+}
+
+h2 {
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 36px;
+}
+
+h3 {
+    font-family: 'Gilroy' !important;
+    font-size: 24px;
+}
+
+p, a {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}

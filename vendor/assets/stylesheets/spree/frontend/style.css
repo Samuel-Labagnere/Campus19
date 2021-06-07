@@ -42,3 +42,7 @@ html {
   color: #FFFFFF !important;
   border-radius: 8px !important;
 }
+
+ul {
+  list-style: none;
+}

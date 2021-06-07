@@ -1,0 +1,15 @@
+footer {
+    background-color: #202020;
+    width: 100%;
+    padding-top: 6vh !important;
+    padding-bottom: 6vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.email-footer {
+    display: flex;
+    flex-direction: column;
+}
