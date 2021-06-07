@@ -10,43 +10,50 @@
 
 <!-- Add active class to list item to have it open by default ?-->
 
-<details>
-  <summary class="list">
-    <div class="title_summary">
-      Taille 
-      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
-    </div>
-  </summary>
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>S</p>
-  </div>  
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>M</p>
-  </div>  
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>L</p>
-  </div>  
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>XL</p>
+<div class="details_list">
+  <div class="nb_result">
+    <h3 class="title_list research">Votre Recherche</h3> 
+    <p> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
   </div>
-  </details>
+  <h3 class="title_list">Filtre</h3>
   <details>
-  <summary class="list">
-    <div class="title_summary">
-      Trier par 
-      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+    <summary class="list">
+      <div class="title_summary">
+        Taille 
+        <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+      </div>
+    </summary>
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>S</p>
+    </div>  
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>M</p>
+    </div>  
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>L</p>
+    </div>  
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>XL</p>
     </div>
-  </summary>
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>Prix Croissant</p>
-  </div>
-  <div class="flex_li">
-    <input type="checkbox">
-    <p>Prix décroissant</p>
-  </div>
-</details>
+    </details>
+    <details>
+    <summary class="list">
+      <div class="title_summary">
+        Trier par 
+        <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+      </div>
+    </summary>
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>Prix Croissant</p>
+    </div>
+    <div class="flex_li">
+      <input type="checkbox">
+      <p>Prix décroissant</p>
+    </div>
+  </details>
+</div>
