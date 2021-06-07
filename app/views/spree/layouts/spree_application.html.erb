@@ -10,10 +10,11 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
     <div class="container">
+    <div class="blur"></div>
 
       <%= render partial: 'spree/shared/header' %>
 
-      <div id="wrapper" class="row" data-hook>
+      <div id="wrapper" class="row wrapper_content" data-hook="">
 
         <%= taxon_breadcrumbs(@taxon) %>
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>

@@ -1,4 +1,4 @@
-<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<!--<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
 <nav id="taxonomies" class="sidebar-item" data-hook>
   <% @taxonomies.each do |taxonomy| %>
     <% cache [I18n.locale, taxonomy, @taxon, max_level] do %>
@@ -6,4 +6,47 @@
       <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
     <% end %>
   <% end %>
-</nav>
+</nav>-->
+
+<!-- Add active class to list item to have it open by default ?-->
+
+<details>
+  <summary class="list">
+    <div class="title_summary">
+      Taille 
+      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+    </div>
+  </summary>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>S</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>M</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>L</p>
+  </div>  
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>XL</p>
+  </div>
+  </details>
+  <details>
+  <summary class="list">
+    <div class="title_summary">
+      Trier par 
+      <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+    </div>
+  </summary>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>Prix Croissant</p>
+  </div>
+  <div class="flex_li">
+    <input type="checkbox">
+    <p>Prix décroissant</p>
+  </div>
+</details>

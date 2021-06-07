@@ -1,8 +1,19 @@
-// var humburger_general = document.querySelector('.humburger_general');
-// var annimation_menu = document.querySelector('.annimation_menu');
+$(document).ready(function(){
+//     var imgRotateInvers = document.querySelector('.imgRotateInvers');
+//     var slidebar_button = document.querySelector('.slidebar_button');
+//     var sidebar_hidden = document.querySelector('.sidebar_hidden');
+//     var sidebar_visible = document.querySelector('.sidebar_visible');
 
-// humburger_general.onclick = function() {
-//     humburger_general.classList.toggle('active');
-//     annimation_menu.classList.toggle('active');
 
+// slidebar_button.onclick = function() {
+//     imgRotateInvers.classList.toggle('imgRotate');
+//     sidebar_hidden.classList.toggle('sidebar_visible');
 // }
+// 
+
+let fleche = document.querySelector(".imgRotateInvers");
+document.querySelector('.title_summary').addEventListener('click', function(){
+fleche.classList.toggle('imgRotate')
+});
+
+}) 

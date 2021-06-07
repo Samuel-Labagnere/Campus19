@@ -7,9 +7,13 @@
     <li class="left-side-nav"><a href="https://google.com">Nos magasins</a></li>
     <%= render 'spree/shared/locale_selector' %>
     </li>
-    <li id="search-bar" data-hook>
+    <li id="search-bar" data-hook onclick="extendHeader()">
       <%= render partial: 'spree/shared/search' %>
     </li>
+    <button class="cross-btn" onclick="reduceHeader()">
+        <span class="cross-line cross-line-1"></span>
+        <span class="cross-line cross-line-2"></span>
+      </button>
     <%= render 'spree/shared/login_bar_items' %>
     <li id="link-to-cart" data-hook>
       <noscript>

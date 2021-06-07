@@ -1,0 +1,57 @@
+.pop-up {
+    background-color: #fff;
+    width: 45vw;
+    height: 60vh;
+    position: absolute;
+    border-radius: 20px;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 4vh 3vw 6vh 3vw;
+}
+
+.cross {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 2.5em;
+    background-color: black;
+    right: 3vw;
+    top: 4vh;
+    position: absolute;
+}
+
+.pop-up .cross-line {
+    background-color: #fff;
+}   
+
+.pop-up .title {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.pop-up h2 {
+    text-align: center;
+}
+
+#new_spree_user p {
+    text-align: left;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+}
+
+.button-login {
+    padding: 10px 0 !important;
+    text-align: center;
+    width: 11vw;
+    display: block;
+    margin: 4vh auto;
+}
