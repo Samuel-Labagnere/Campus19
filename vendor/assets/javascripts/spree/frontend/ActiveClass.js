@@ -11,9 +11,9 @@ $(document).ready(function(){
 // }
 // 
 
-let fleche = document.querySelector(".imgRotateInvers");
-document.querySelector('.title_summary').addEventListener('click', function(){
-fleche.classList.toggle('imgRotate')
-});
+// let fleche = document.querySelector(".imgRotateInvers");
+// document.querySelector('.title_summary').addEventListener('click', function(){
+// fleche.classList.toggle('imgRotate')
+// });
 
 }) 

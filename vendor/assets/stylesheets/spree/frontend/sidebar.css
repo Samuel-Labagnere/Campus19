@@ -23,19 +23,13 @@
 .flex_li{
     display: flex;
     align-items: center;  
-    width: 104%;      
+    width: 120%;      
 }
-.flex_li input{
+/*.flex_li input{
     margin: 0 1em 0 3em;
-}
+}*/
 .list img{
     width: 20px;
-}
-.imgRotateInvers{
-    transform: rotateX(180deg) ;
-}
-.imgRotate{
-    transform: rotateX(360deg) !important;
 }
 .list{
     padding: 1em 2em;
@@ -57,6 +51,103 @@
     padding: 18px 0 6px 0;
 }
 .flex_li p{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
+}
+.colors_list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio {
+    position:relative;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    width:30px;
+    height:30px;
+    margin:10px;
+    margin-top:0px;
+    -webkit-border-radius:100px;
+       -moz-border-radius:100px;
+            border-radius:100px;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+  }
+  
+  .radio:checked {
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    background:black;
+  }
+  
+  .radio:checked:after{
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    background:transparent;
+  }
+  
+  .radio:after {
+    position:absolute;
+    top:5px;
+    left:5px;
+    width:20px;
+    height:20px;
+    content:"";
+    -webkit-border-radius:100px;
+       -moz-border-radius:100px;
+            border-radius:100px;
+  }
+  .radio_color{
+    background: #C4C4C4;
+  }
+
+.check_color {background:#C4C4C4;}
+.check_color:hover {
+    background:#a7a6a6;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.check {
+  position:relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width:21px;
+  height:21px;
+  border-radius:3px;
+  font:2em 'Open Sans';
+  text-align:center;
+  margin: 0 10px 0 0;
+}
+
+.check:after {
+  position:absolute;
+  content:"";       
+  width:21px;
+  height:21px;
+}
+
+.check:checked:after {
+  content:"";       
+  left: 0;
+  width:21px;
+  height:21px;
+  background:black;
+  border-radius:3px;
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+details[open] img{
+    transform: rotateX(360deg) !important;
+}
+.imgRotateInvers{
+    transform: rotateX(180deg) ;
+}
+.imgRotate{
+    transform: rotateX(360deg) !important;
 }
