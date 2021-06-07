@@ -9,12 +9,16 @@
       <%= f.password_field :password, class: 'title', tabindex: 2, placeholder: "Mot de passe" %>
     </p>
   </div>
-  <p>
-    <%= f.check_box :remember_me, tabindex: 3 %>
-    <%= f.label :remember_me, t('Se rappeler de moi') %>
-  </p>
+  <div class="remember">
+    <div>
+      <%= f.check_box :remember_me, tabindex: 3 %>
+      <%= f.label :remember_me, t('Se rappeler de moi') %>
+    </div>
+    <%= link_to t('spree.forgot_password'), spree.recover_password_path %>
+  </div>
+
 
   <p>En vous connectant, vous accepter de vous conformer à notre Politique de confidentialité et à nos Conditions générales d'utilisation.</p>
 
-  <p><%= f.submit t('spree.login'), class: 'button button-primary', tabindex: 4 %></p>
+  <%= f.submit t('spree.login'), class: 'button button-primary button-login', tabindex: 4 %>
 <% end %>

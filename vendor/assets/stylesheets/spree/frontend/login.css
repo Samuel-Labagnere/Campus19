@@ -39,3 +39,19 @@
 #new_spree_user p {
     text-align: left;
 }
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+}
+
+.button-login {
+    padding: 10px 0 !important;
+    text-align: center;
+    width: 11vw;
+    display: block;
+    margin: 4vh auto;
+}

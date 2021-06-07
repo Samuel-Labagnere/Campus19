@@ -28,10 +28,10 @@
         <!--<h6><%= t('spree.login_as_existing') %></h6>-->
         <div data-hook="login">
           <%= render partial: 'spree/shared/login' %>
-          <%= t('spree.or') %>&nbsp;<%= link_to t('spree.create_a_new_account'), spree.signup_path %> | <%= link_to t('spree.forgot_password'), spree.recover_password_path %>
+          <%= link_to t('spree.create_a_new_account'), spree.signup_path %>
         </div>
       </div>
-      <div data-hook="login_extras"></div>
+      <p>Vous n'avez pas encore de compte ?</p><div data-hook="login_extras"></div>
     </div>
   </div>
 <% end %>
