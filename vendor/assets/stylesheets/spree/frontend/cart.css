@@ -1,5 +1,17 @@
+#content{
+    width: 100%;
+}
+.container .sixteen.columns{
+    width: 100%;
+}
+
 .continue_cart{
     text-decoration: underline;
+    color: #f3a8b2;
+}
+.continue_cart:hover{
+    text-decoration: underline;
+    color: #ed5466;
 }
 
 #option_cart{
@@ -7,23 +19,53 @@
     float: right;
     display: inline-flex;
 }
+
+
 .button_cart{
-    color: black;
-    background-color: transparent;
-    border: solid 2px #ed5466;
-    border-radius: 1em;
+    color: black !important;
+    background-color: transparent !important;
+    border: solid 2px #ed5466 !important;
+    border-radius: 1em !important;
 }
-#update_cart{
-    margin: auto;
+
+#upper_buttons{
+    width: 60%;
+
+    display: flex;
+    justify-content: end;
+}
+
+#recap{
+    width: 35%;
+    display: grid;
+    justify-content: inherit;
+    float: right;
+}
+
+#empty_cart{
 }
 #clear_cart{
     margin-left: 1em;
 }
-#checkout_cart{
+
+input#coupon_code{
+    color: rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    background-color: #f4e2e4;
+    border: none;
+    border-radius: 1em;
+
+    padding: 8px 12px 7px 12px;
+}
+
+#checkout-link{
     text-transform: uppercase;
 
     background-color: #ed5466;
     border: none;
+    border-radius: 1em;
 
     padding-left: 6em;
     padding-top: 1em;
