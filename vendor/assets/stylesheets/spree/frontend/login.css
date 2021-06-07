@@ -55,3 +55,8 @@
     display: block;
     margin: 4vh auto;
 }
+.login img{
+    width: 18.9px;
+    height: auto;
+    opacity: 35%;
+}
