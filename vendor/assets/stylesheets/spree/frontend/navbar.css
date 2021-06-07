@@ -12,6 +12,10 @@ header {
     display: block;
     padding: 15px 0;
 }
+#logo a{
+    width:22px;
+}
+
 
 #nav-bar{
     width: 100%;

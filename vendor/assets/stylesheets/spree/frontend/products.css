@@ -35,7 +35,7 @@ ul#products li {
 }
 
 .container .twelve.columns {
-    width: 80%;
+    width: 80% !important;
 }
 
 ul#products li a.info {
