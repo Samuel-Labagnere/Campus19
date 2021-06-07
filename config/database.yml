@@ -83,4 +83,4 @@ production:
   <<: *default
   database: campus19_production
   username: campus19
-  password: <%= ENV['CAMPUS19_DATABASE_PASSWORD'] %>
+  password: <%= ENV['APPTEST_DATABASE_PASSWORD'] %>
