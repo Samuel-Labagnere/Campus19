@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'listen', '~> 3.3'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,10 +42,7 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  
+
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.3", require: false
   gem 'capistrano-rvm'
@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "solidus", "~> 3.0"
 gem 'solidus_auth_devise'
+
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
