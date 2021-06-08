@@ -36,6 +36,19 @@ html {
   box-shadow: none !important;
   border: none !important;
 }
+/*  //Le style dont je me sers pour mes boutons secondaires dans le panier. Léo Mellé
+.button_cart{
+  color: #202020 !important;
+  background-color: transparent !important;
+  border: solid 2px #ed5466 !important;
+  border-radius: 1em !important;
+}
+.button_cart:hover{
+  color: white !important;
+  background-color: #ed5466 !important;
+  border: none !important;
+  padding: 8px 12px 7px 12px !important;
+} */
 
 .button-primary {
   background-color: #ED5466 !important;

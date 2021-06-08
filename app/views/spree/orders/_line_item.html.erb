@@ -7,10 +7,9 @@
                          size: :small), variant.product)%>
     </td>
     <td class="cart-item-description" data-hook="cart_item_description">
-      <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
-      <%= line_item.single_money.to_html %>
-      <%= variant.options_text %>
-      <%= item_form.number_field :quantity, min: 0, class: "line_item_quantity", size: 5 %>
+      <p class="p_cart"><%= link_to line_item.name, product_path(variant.product) %> <%= line_item.single_money.to_html %></p>
+      <p class="p_cart"><%= variant.options_text %></p>
+      <p class="p_cart">Quantité <%= item_form.number_field :quantity, min: 0, class: "line_item_quantity", size: 5 %></p>
 
       <% if line_item.insufficient_stock? %>
         <span class="out-of-stock">
