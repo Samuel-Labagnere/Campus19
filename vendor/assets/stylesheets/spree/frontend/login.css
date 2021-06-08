@@ -20,6 +20,8 @@
     right: 3vw;
     top: 4vh;
     position: absolute;
+    box-shadow: none;
+    border: none;
 }
 
 .pop-up .cross-line {

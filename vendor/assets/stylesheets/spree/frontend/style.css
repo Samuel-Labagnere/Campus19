@@ -35,6 +35,9 @@ html {
 .button {
   box-shadow: none !important;
   border: none !important;
+  font-size: 16px;
+  width: 130px;
+  height: 40px;
 }
 /*  //Le style dont je me sers pour mes boutons secondaires dans le panier. Léo Mellé
 .button_cart{
@@ -53,35 +56,27 @@ html {
 .button-primary {
   background-color: #ED5466 !important;
   color: #FFFFFF !important;
-  border-radius: 8px !important;
+  border-radius: 10px !important;
+  transition: .3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #CA4757 !important;
 }
 
 ul {
   list-style: none;
 }
-.a-primary{
-  color: #202020 !important;
-  background-color: transparent !important;
-  border: solid 1px #ed5466 !important;
-  border-radius: 8.39px !important;
-  padding: 6px 32px !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
+
+.button-secondary {
+  color: #FFFFFF !important;
+  border: 2px solid #ED5466 !important;
+  border-radius: 10px !important;
+  background-color: transparent;
+  transition: .3s ease-in-out;
 }
-.a-primary:hover{
-  color: white !important;
-  background-color: #ed5466 !important;
-}
-input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
-  background-color: initial;
-  background-image: initial;
-  text-shadow: none;
-  font-weight: bold;
-  border: none;
-  padding: 0;
-  vertical-align: none;
-  -webkit-font-smoothing: antialiased;
-  -o-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0px;
+
+.button-secondary:hover {
+  background-color: #ED5466;
+  color: #FFFFFF !important;
 }
