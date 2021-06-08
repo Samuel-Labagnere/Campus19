@@ -19,6 +19,7 @@ footer div {
 }
 
 footer p {
+    color: #ffffff !important;
     padding: 0;
 }
 
@@ -31,10 +32,10 @@ footer input:nth-child(2) {
 }
 
 footer a {
-    color: #ffffff;
+    color: #ffffff !important;
     cursor: pointer;
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: #ffffff !important;
 }
