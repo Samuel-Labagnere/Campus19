@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/max-las/solidus_dynamic_variants.git
+  revision: 9c28739183c96abf833637668ccee0bdff0d8e81
+  specs:
+    solidus_dynamic_variants (1.0.0)
+      solidus_core (>= 2.0.0, < 4)
+      solidus_support (~> 0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -390,6 +398,7 @@ DEPENDENCIES
   selenium-webdriver
   solidus (~> 3.0)
   solidus_auth_devise
+  solidus_dynamic_variants!
   spring
   turbolinks (~> 5)
   tzinfo-data
