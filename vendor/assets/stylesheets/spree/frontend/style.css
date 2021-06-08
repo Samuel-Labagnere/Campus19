@@ -57,6 +57,11 @@ html {
   background-color: #ED5466 !important;
   color: #FFFFFF !important;
   border-radius: 10px !important;
+  transition: .3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #CA4757 !important;
 }
 
 ul {
@@ -68,4 +73,10 @@ ul {
   border: 2px solid #ED5466 !important;
   border-radius: 10px !important;
   background-color: transparent;
+  transition: .3s ease-in-out;
+}
+
+.button-secondary:hover {
+  background-color: #ED5466;
+  color: #FFFFFF !important;
 }
