@@ -13,3 +13,28 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+footer div {
+    align-self: flex-start;
+}
+
+footer p {
+    padding: 0;
+}
+
+footer input {
+    border-radius: 10px;
+}
+
+footer input:nth-child(2) {
+    margin-top: 5%;
+}
+
+footer a {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
