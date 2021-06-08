@@ -1,0 +1,35 @@
+.homeheader {
+    height: 525px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background-image: url('https://images.pexels.com/photos/2210899/pexels-photo-2210899.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+}
+
+.homeheader h1, .homeheader h2 {
+    color: #ffffff;
+}
+
+.collection-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 7vh 0;
+    height: 400px;
+}
+
+.collection-home p {
+    margin: 0 auto;
+    color: #202020;
+    width: 30vw;
+}
+
+.collection-home h2 {
+    color: #202020;
+}

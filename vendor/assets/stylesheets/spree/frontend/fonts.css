@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
     font-family: "Gilroy";
-    src: url('../../../fonts/AnyConv.com__Gilroy-ExtraBold.woff') format('woff');
-} */
+    src: url('../../../fonts/Gilroy-ExtraBold.woff') format('woff');
+}
 
 /* @font-face {
     font-family: "Lato";
@@ -9,7 +9,7 @@
 } */
 
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap%27'); */
-/* @import url('onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold'); */
+/* @import url('https://onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold'); */
 
 h1 {
     font-family: 'Gilroy', sans-serif !important;

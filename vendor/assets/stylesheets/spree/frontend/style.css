@@ -35,14 +35,24 @@ html {
 .button {
   box-shadow: none !important;
   border: none !important;
+  font-size: 16px;
+  width: 130px;
+  height: 40px;
 }
 
 .button-primary {
   background-color: #ED5466 !important;
   color: #FFFFFF !important;
-  border-radius: 8px !important;
+  border-radius: 10px !important;
 }
 
 ul {
   list-style: none;
+}
+
+.button-secondary {
+  color: #FFFFFF !important;
+  border: 2px solid #ED5466 !important;
+  border-radius: 10px !important;
+  background-color: transparent;
 }
