@@ -20,6 +20,10 @@
     display: inline-flex;
 }
 
+h1.h1_cart{
+    font-size: 24px;
+    margin-bottom: 2em;
+}
 .h2_cart{
     font-size: 14px;
     margin-bottom: 2em;
@@ -27,17 +31,19 @@
 .p_cart{
     padding: 3px 0 7px 0;
 }
+
 .button_cart{
     color: #202020 !important;
     background-color: transparent !important;
     border: solid 2px #ed5466 !important;
     border-radius: 1em !important;
+    padding: 5px 10px 5px 10px !important;
 }
 .button_cart:hover{
     color: white !important;
     background-color: #ed5466 !important;
     border: none !important;
-    padding: 8px 12px 7px 12px !important;
+    padding: 7px 12px 7px 12px !important;
 }
 
 #upper_buttons{
@@ -76,7 +82,9 @@ input#coupon_code{
     margin-right: 1em;
 }
 #checkout-link{
-    text-transform: uppercase;
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 16px !important;
+    color: white !important;
 
     background-color: #ed5466;
     border: none;
@@ -94,9 +102,7 @@ table#cart-detail{
 
 tr.line-item{
     background-color: transparent;
-
     display: inline-block;
-
     border: none;
 }
 tr.alt.line-item{
@@ -108,5 +114,11 @@ tr.line-item td a img{
 }
 td.cart-item-image a img{
     width: 250px;
+}
+
+.line_item_quantity{
+    background-color: #f4e2e4;
+    border: none !important;
+    border-radius: 2em;
 }
 
