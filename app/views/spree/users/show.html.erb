@@ -1,7 +1,7 @@
 <div class="show_account">
   <div class="edit_link">
     <h3>Mon compte<%#= accurate_title %></h3>
-    <%= link_to t('Modifer'), spree.edit_account_path, class:"a-primary" %>
+    <button class="button button-secondary email_button"><%= link_to t('Modifer'), spree.edit_account_path %></button>
   </div>
   <div class="show_account_content">
     <div data-hook="account_summary" class="account_summary">

@@ -12,6 +12,10 @@
     font-weight: normal !important;
     font-family: 'Lato' !important;
 }
+.email_button{
+    width: 123.21px !important;
+    height: 30.89px !important;
+}
 .show_account p{
     font-size: 16px !important;
 }
