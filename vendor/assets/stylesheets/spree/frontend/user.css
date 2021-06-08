@@ -1,0 +1,29 @@
+.show_account{
+    height: 65vh;
+    width: 70%;
+
+}
+.edit_link{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+.edit_link h3{
+    font-weight: normal !important;
+    font-family: 'Lato' !important;
+}
+.show_account p{
+    font-size: 16px !important;
+}
+.show_account_content{
+    margin: 33px 0 0 100px;
+}
+.user_email{
+    background-color: #C4C4C4;
+    border-radius: 8.39px;
+    width: fit-content;
+    padding: 6px 17px;
+}
+.account_my_orders{
+    margin: 33px 0 0 0;
+}

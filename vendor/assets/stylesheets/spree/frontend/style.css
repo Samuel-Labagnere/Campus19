@@ -59,3 +59,29 @@ html {
 ul {
   list-style: none;
 }
+.a-primary{
+  color: #202020 !important;
+  background-color: transparent !important;
+  border: solid 1px #ed5466 !important;
+  border-radius: 8.39px !important;
+  padding: 6px 32px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+.a-primary:hover{
+  color: white !important;
+  background-color: #ed5466 !important;
+}
+input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
+  background-color: initial;
+  background-image: initial;
+  text-shadow: none;
+  font-weight: bold;
+  border: none;
+  padding: 0;
+  vertical-align: none;
+  -webkit-font-smoothing: antialiased;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
