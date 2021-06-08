@@ -57,4 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "solidus", "~> 3.0"
 gem 'solidus_auth_devise'
-gem 'solidus_auth_devise'
+
+gem 'solidus_dynamic_variants', github: 'max-las/solidus_dynamic_variants'
