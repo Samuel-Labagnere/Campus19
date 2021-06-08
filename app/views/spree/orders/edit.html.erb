@@ -7,7 +7,7 @@
   <% if @order.line_items.empty? %>
 
     <div data-hook="empty_cart">
-      <p class="p_cart">Votre panier est vide</p>
+      <h1 class="h1_cart">Votre panier est vide</p>
       <p class="p_cart"><%= link_to 'Faire mon shopping !', products_path, class: 'button_cart', id: "empty_cart" %></p>
     </div>
 

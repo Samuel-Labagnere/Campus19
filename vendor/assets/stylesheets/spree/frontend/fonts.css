@@ -29,8 +29,8 @@ h3 {
     color: #202020 !important;
 }
 
-p, a {
+p, a, button, input {
     font-family: 'Lato', sans-serif !important;
-    font-size: 14px;
+    font-size: 14px !important;
     color: #202020 !important;
 }

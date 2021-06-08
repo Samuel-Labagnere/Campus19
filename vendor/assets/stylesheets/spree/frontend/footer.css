@@ -1,12 +1,16 @@
 footer {
     background-color: #202020;
     width: 100%;
-    padding-top: 6vh !important;
-    padding-bottom: 6vh !important;
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #fff;
+}
+footer *{
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 16px;
+    color: #ffffff;
 }
 
 .email-footer {
@@ -25,6 +29,7 @@ footer p {
 
 footer input {
     border-radius: 10px;
+    padding: 5px 10px 5px 10px !important;
 }
 
 footer input:nth-child(2) {
@@ -33,9 +38,10 @@ footer input:nth-child(2) {
 
 footer a {
     color: #ffffff !important;
-    cursor: pointer;
 }
 
 footer a:hover {
     color: #ffffff !important;
+    cursor: pointer;
+    text-decoration: underline;
 }
