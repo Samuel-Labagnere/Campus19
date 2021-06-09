@@ -32,20 +32,6 @@ h1.h1_cart{
     padding: 3px 0 7px 0;
 }
 
-.button_cart{
-    color: #202020 !important;
-    background-color: transparent !important;
-    border: solid 2px #ed5466 !important;
-    border-radius: 1em !important;
-    padding: 5px 10px 5px 10px !important;
-}
-.button_cart:hover{
-    color: white !important;
-    background-color: #ed5466 !important;
-    border: none !important;
-    padding: 7px 12px 7px 12px !important;
-}
-
 #upper_buttons{
     width: 55%;
 
@@ -76,7 +62,7 @@ input#coupon_code{
 
     background-color: #f4e2e4;
     border: none;
-    border-radius: 1em;
+    border-radius: 10px;
 
     padding: 7px 12px 7px 12px;
     margin-right: 1em;
@@ -91,7 +77,7 @@ input#coupon_code{
 
     background-color: #ed5466;
     border: none;
-    border-radius: 1em;
+    border-radius: 10px;
 
     padding: 1em 6em 1em 6em;
 }

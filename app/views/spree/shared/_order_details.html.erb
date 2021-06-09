@@ -5,7 +5,7 @@
     <div class="columns alpha four" data-hook="order-bill-address">
       <h6><%= t('spree.billing_address') %> <%= link_to "(#{t('spree.actions.edit')})", checkout_state_path(:address) unless order.completed? %></h6>
       <%= render partial: 'spree/shared/address', locals: { address: order.bill_address } %>
-    </div>
+    </div>-
 
     <% if order.has_checkout_step?("delivery") %>
       <div class="columns alpha four" data-hook="order-ship-address">

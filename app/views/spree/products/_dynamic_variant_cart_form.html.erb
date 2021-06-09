@@ -26,8 +26,8 @@
 
         <div class="add-to-cart">
           <%= number_field_tag :quantity, 1, :class => 'title', :min => 1 %>
-          <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
-            <%= I18n.t("spree.add_to_cart") %>
+          <%= button_tag :class => 'button-secondary', :id => 'add-to-cart-button', :type => :submit do %>
+            <%= "Mettre au panier" %>
           <% end %>
         </div>
       </div>

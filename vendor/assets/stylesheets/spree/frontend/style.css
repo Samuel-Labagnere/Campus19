@@ -67,3 +67,9 @@ ul {
   color: #FFFFFF !important;
   background-color: #ED5466  !important;
 }
+
+input {
+  background-color: #f4e2e4 !important;
+  border: none !important;
+  border-radius: 10px !important;
+}

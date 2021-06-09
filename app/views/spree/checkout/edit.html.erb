@@ -1,8 +1,8 @@
 <div id="checkout" data-hook>
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
-  <div class="row" data-hook="checkout_header">
-    <h1 class="columns three alpha" data-hook="checkout_title"><%= t('spree.checkout') %></h1>
+  <div class="row headcheckout" data-hook="checkout_header">
+    <h1 class="columns three alpha titlecheckout" data-hook="checkout_title">Commandez chez Culture Campus</h1>
     <div class="columns thirteen omega" data-hook="checkout_progress"><%= checkout_progress %></div>
   </div>
 
