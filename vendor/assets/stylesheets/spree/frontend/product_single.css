@@ -1,0 +1,30 @@
+.product_content{
+    display: block ruby;
+}
+
+.leftpart_product{
+    width: 45%;
+}
+.rightpart_product{
+    width: 35%;
+    float: right;
+    margin-right: 10%;
+}
+
+#inside-product-cart-form{
+    display: grid;
+}
+#add-to-cart-button{
+    font-size: 20px !important;
+
+    padding: 1em 5em 1em 5em;
+    
+    margin: 2em 0 2em 0;
+}
+
+.product-titles{
+    font-family: 'Gilroy' !important;
+    font-size: 16px !important;
+    border: none !important;
+}
+

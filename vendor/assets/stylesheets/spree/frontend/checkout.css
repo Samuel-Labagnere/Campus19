@@ -1,13 +1,17 @@
 .headcheckout {
     display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .titlecheckout {
     width: 50% !important;
-text-align: center;
-line-height: 90px;
-margin-bottom: 1em;
+    text-align: center;
+    line-height: 90px;
+    margin-bottom: 1em;
+}
+
+.title{
+    text-align: right;
 }
