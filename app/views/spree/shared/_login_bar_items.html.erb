@@ -1,11 +1,11 @@
 <% if spree_current_user %>
   <li class="login">
   <%#= link_to t('Profil'), spree.account_path, class: 'profile' %>
-  
-  <a href="/account"><img src="<%= image_url('profil.svg') %>"></a>
-  
+    <a href="/account"><img src="<%= image_url('profil.svg') %>" class="login"></a>
   </li>
-  <!--<li><%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %></li>-->
+  <!--<li>
+    <%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %>
+  </li>-->
 <% else %>
 
   <%

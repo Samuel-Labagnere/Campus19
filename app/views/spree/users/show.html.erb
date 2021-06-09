@@ -42,7 +42,13 @@
       <% else %>
         <p><%= t('spree.you_have_no_orders_yet') %></p>
       <% end %>
-      <br />
+      
+
+      <% if spree_current_user %>
+        <li>
+          <%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %>
+        </li>
+      <% end %>
 
     </div>
   </div>
