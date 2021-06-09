@@ -11,7 +11,7 @@
     background-image: url('https://images.pexels.com/photos/2210899/pexels-photo-2210899.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
 }
 
-.homeheader h1, .homeheader h2, button.homebutton {
+.homeheader h1, .homeheader h2, .homeheader button {
     color: #ffffff !important;
 }
 
@@ -51,10 +51,28 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 
 .category-home-left {
     background-image: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(32, 32, 32, 0.4) 100%), url('https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-FR-Site/Library-Sites-LacosteContent/fr/dw56a25f63/ss21/gender/men/20210428/2B.jpg?imwidth=840&impolicy=custom');
+}
+
+.category-home-left::after, .category-home-right::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(32, 32, 32, 0.8) 100%);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border-radius: 20px;
+}
+
+.category-home-left:hover::after, .category-home-right:hover::after {
+    opacity: 1;
 }
 
 .category-home-right {
@@ -66,18 +84,31 @@
     margin-bottom: 15px;
 }
 
-.img-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(32, 32, 32, 0.4) 100%);
-    border-radius: 20px;
-}
-
 .category-btn-container {
     position: absolute;
+    z-index: 2;
     bottom: 10%;
     left: 15%;
+}
+
+button.category-btn {
+    color: #FFFFFF !important;
+    border: 2px solid #ED5466 !important;
+    border-radius: 10px !important;
+    background-color: transparent;
+    transition: .3s ease-in-out;
+}
+
+button.category-btn:hover {
+    background-color: #CA4757 !important;
+    border: 2px solid #CA4757 !important;
+}
+
+.selection-home {
+    padding: 7vh 0;
+}
+
+.selection-home h2 {
+    text-align: center;
+    margin-bottom: 3vh;
 }
