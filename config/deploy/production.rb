@@ -61,6 +61,6 @@
 #   }
 set :stage, :production
 set :rails_env, :production
-set :branch, "rails-front"
+set :branch, "rails"
 
 server "216.137.181.47:7822", user: "campus19", roles: %w{app db web}

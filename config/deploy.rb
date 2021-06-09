@@ -3,7 +3,7 @@ lock "~> 3.16.0"
 
 set :application, "CultureCampus"
 set :repo_url, "git@github.com:Samuel-Labagnere/Campus19.git"
-set :deploy_to, "/home/campus19/CultureCampusFront-Deploy/"
+set :deploy_to, "/home/campus19/CultureCampus-Deploy/"
 
 set :linked_files, %w{config/credentials/production.key}
 
