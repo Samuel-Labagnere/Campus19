@@ -1,13 +1,13 @@
 $(document).ready(function() {
+    $('.category-home-left').hover(() => {
+        $('.category-btn').first().css('background-color', '#ED5466')
+    }, () => {
+        $('.category-btn').first().css('background-color', '')
+    })
 
-    const header = document.querySelector('header')
-
-    $(".custom_variants_display").each(function(){
-        var arr = $(this).html().split(", ");
-        var i;
-        for(i = 0; i < arr.length; i++){
-            $(this).after('<p class="p_cart">'+arr[i]+'</p>');
-        }
-        $(this).remove();
-    });
-});
+    $('.category-home-right').hover(() => {
+        $('.category-btn').last().css('background-color', '#ED5466')
+    }, () => {
+        $('.category-btn').last().css('background-color', '')
+    })
+})
