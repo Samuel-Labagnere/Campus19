@@ -11,7 +11,7 @@
     background-image: url('https://images.pexels.com/photos/2210899/pexels-photo-2210899.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
 }
 
-.homeheader h1, .homeheader h2 {
+.homeheader h1, .homeheader h2, button.homebutton {
     color: #ffffff !important;
 }
 

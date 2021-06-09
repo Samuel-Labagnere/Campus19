@@ -39,19 +39,6 @@ html {
   width: 130px;
   height: 40px;
 }
-/*  //Le style dont je me sers pour mes boutons secondaires dans le panier. Léo Mellé
-.button_cart{
-  color: #202020 !important;
-  background-color: transparent !important;
-  border: solid 2px #ed5466 !important;
-  border-radius: 1em !important;
-}
-.button_cart:hover{
-  color: white !important;
-  background-color: #ed5466 !important;
-  border: none !important;
-  padding: 8px 12px 7px 12px !important;
-} */
 
 .button-primary {
   background-color: #ED5466 !important;
@@ -69,14 +56,14 @@ ul {
 }
 
 .button-secondary {
-  color: #FFFFFF !important;
+  color: #202020 !important;
   border: 2px solid #ED5466 !important;
   border-radius: 10px !important;
-  background-color: transparent;
-  transition: .3s ease-in-out;
+  background-color: transparent !important;
+  transition: .3s ease-in-out !important;
 }
 
 .button-secondary:hover {
-  background-color: #ED5466;
   color: #FFFFFF !important;
+  background-color: #ED5466  !important;
 }

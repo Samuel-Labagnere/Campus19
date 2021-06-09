@@ -22,11 +22,11 @@ ul#products li {
     margin-right: 0; 
 }
 .nb_result_right{
-    color: #ED5466;
-    font-size: 16px;
+    color: #ED5466 !important;
+    font-size: 16px !important;
     float: right;
-    font-family: 'Gilroy', sans-serif;
-    font-weight: bolder;
+    font-family: 'Gilroy', sans-serif!important;
+    font-weight: bolder!important;
 }
 .product-image{
     height: 270px;
