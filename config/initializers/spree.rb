@@ -58,6 +58,7 @@ Spree.config do |config|
   #   server: Rails.env.production? ? 'production' : 'test',
   #   test_mode: !Rails.env.production?
   # )
+  config.roles.assign_permissions :merchant, ['Spree::PermissionSets::OrderDisplay']
 end
 
 Spree::Frontend::Config.configure do |config|
@@ -90,3 +91,4 @@ Spree.user_class = "Spree::LegacyUser"
 # the class name:
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
+Spree::Role.find_or_create_by(name: 'merchant')
