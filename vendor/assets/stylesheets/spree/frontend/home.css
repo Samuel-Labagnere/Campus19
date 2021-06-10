@@ -1,3 +1,10 @@
+.home-container {
+    padding: 0 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
 .homeheader {
     height: 525px;
     background-repeat: no-repeat;
@@ -8,6 +15,7 @@
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
+    transition: .5s ease-in-out;
     background-image: url('https://images.pexels.com/photos/2210899/pexels-photo-2210899.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
 }
 

@@ -1,5 +1,11 @@
 <header id="header" class="row" data-hook>
+  <% if current_page?(root_path) %>
+    <div class="home-container">
+  <% end %>
   <figure id="logo" class="columns six" data-hook><a href="/"><img src="<%= image_url('logo.svg') %>"></a></figure>
   <%= render partial: 'spree/shared/nav_bar' %>
   <%# <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
+  <% if current_page?(root_path) %>
+    </div>
+  <% end %>
 </header>
