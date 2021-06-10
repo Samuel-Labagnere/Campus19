@@ -8,8 +8,9 @@
     <%= render partial: 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-
-    <div class="container">
+    <% unless current_page?(root_path) %>
+      <div class="container">
+    <% end %>
     <div class="blur"></div>
 
       <%= render partial: 'spree/shared/header' %>
@@ -28,7 +29,9 @@
 
       </div>
 
-      </div>
+      <% unless current_page?(root_path) %>
+        </div>
+      <% end %>
 
       <%= render partial: 'spree/shared/footer' %>
 
