@@ -2,11 +2,12 @@
     height: 65vh;
     width: 70%;
     margin-top: 50px;
+    margin-left: 50px;
 }
 .edit_link{
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 43%;
 }
 .edit_link h3{
     font-weight: normal !important;
@@ -30,4 +31,10 @@
 }
 .account_my_orders{
     margin: 33px 0 0 0;
+}
+.button_logout{
+    margin-left: 20px;
+}
+.order-summary thead{
+    
 }
