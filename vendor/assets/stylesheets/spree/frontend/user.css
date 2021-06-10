@@ -35,6 +35,28 @@
 .button_logout{
     margin-left: 20px;
 }
-.order-summary thead{
-    
+.order-summary tr:nth-child(even),.order-summary th{
+    background-color: #F7F7F7;
+}
+
+.order-summary th:first-child{
+    border-radius: 20px 0 0 0 ;
+}
+.order-summary th:last-child{
+    border-radius: 0 20px 0 0 ;
+}
+table tbody tr, table tfoot tr {
+    border-bottom: none !important;
+}
+.bottom_table{
+    background-color: #F7F7F7;
+    width: 100%;
+    height: 40px;
+    border-radius: 0 0 20px 20px;
+}
+.order-summary th{
+    padding: 22px 0;
+    font-family: 'Gilroy', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
 }
