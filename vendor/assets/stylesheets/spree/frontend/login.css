@@ -1,45 +1,42 @@
-.pop-up {
+.login_page_container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 77vh;
+    font-family: 'Gilroy', sans-serif !important;
+}
+.login_page {
+    flex-direction: column;
     background-color: #fff;
-    width: 45vw;
-    height: 60vh;
-    position: absolute;
+    width: 45%;
     border-radius: 20px;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    display: none;
-    padding: 4vh 3vw 6vh 3vw;
+    padding: 0 3vw 6vh 3vw;
+    z-index: 5;
+} 
+.login_img_container{
+    display: flex;
+    justify-content: center;
 }
-
-.cross {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 2.5em;
-    background-color: black;
-    right: 3vw;
-    top: 4vh;
-    position: absolute;
-    box-shadow: none;
-    border: none;
+.login_page img{
+    width: 28px;
+    margin: 0 0 24px 0;
 }
-
-.pop-up .cross-line {
-    background-color: #fff;
-}   
-
-.pop-up .title {
+.login_page .title {
     width: 100%;
     border-radius: 8px;
     padding: 10px 20px;
 }
 
-.pop-up h2 {
-    text-align: center;
+.login_page h2 {
+    text-align: center !important;
+    font-size: 24px !important;
+    font-family: 'Gilroy', sans-serif !important;
 }
 
 #new_spree_user p {
     text-align: left;
+    font-family: 'Gilroy', sans-serif !important;
 }
 
 .remember {
@@ -57,8 +54,40 @@
     display: block;
     margin: 4vh auto;
 }
+.loged_in{
+    width: 18.9px;
+    height: auto;
+    opacity: 50%;
+}
 .login{
     width: 18.9px;
     height: auto;
-    opacity: 35%;
+}
+.button-login {
+    width: fit-content;
+    padding: 7px 13px !important;
+    box-shadow: none !important;
+}
+.no_account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.no_account p{
+    font-family: 'Gilroy', sans-serif !important;
+}
+.signup_link{
+    color: #ED5466 !important;
+    font-family: 'Gilroy', sans-serif !important;
+    margin-left: 3px;
+}
+.signup_container p{
+ text-align: center !important;
+}
+.legal {
+    margin-top: 30px;
+    font-size: 14px !important;
+}
+.signup_button{
+    text-align: center !important;
 }

@@ -1,7 +1,14 @@
 <div class="show_account">
   <div class="edit_link">
     <h3>Mon compte<%#= accurate_title %></h3>
-    <button class="button button-secondary email_button"><%= link_to t('Modifer'), spree.edit_account_path %></button>
+    <div class="user_button">
+      <button class="button button-secondary email_button"><%= link_to t('Modifer'), spree.edit_account_path %></button>
+      <% if spree_current_user %>
+        <button class="button button-secondary email_button button_logout">
+          <%= link_to "Dexonnexion", spree.logout_path, method: Devise.sign_out_via %>
+        </button>
+      <% end %>
+    </div>
   </div>
   <div class="show_account_content">
     <div data-hook="account_summary" class="account_summary">
@@ -39,15 +46,9 @@
           <% end %>
           </tbody>
         </table>
+        <div class="bottom_table"></div>
       <% else %>
         <p><%= t('spree.you_have_no_orders_yet') %></p>
-      <% end %>
-      
-
-      <% if spree_current_user %>
-        <li>
-          <%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %>
-        </li>
       <% end %>
 
     </div>

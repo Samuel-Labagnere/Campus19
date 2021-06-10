@@ -1,13 +1,28 @@
-<% if flash[:alert] %>
-  <div class="flash errors"><%= flash[:alert] %></div>
-<% end %>
-
-<% @body_id = 'login' %>
-<div id="existing-customer">
-  <h6><%= t('spree.login_as_existing') %></h6>
-  <div data-hook="login">
-    <%= render partial: 'spree/shared/login' %>
-    <%= t('spree.or') %>&nbsp;<%= link_to t('spree.create_a_new_account'), spree.signup_path %> | <%= link_to t('spree.forgot_password'), spree.recover_password_path %>
+<div class="login_page_container">
+  <div class="login_page">
+    <div class="login_img_container">
+      <img src="<%= image_url('logo.svg') %>">
+    </div>
+    <h2>Bienvenue sur Culture Campus™,<br>connectez-vous.</h2>
+    <div>
+      <% if flash[:alert] %>
+        <div class="flash errors"><%= flash[:alert] %></div>
+      <% end %>
+      
+      <% @body_id = 'login' %>
+      <div id="existing-customer">
+        <!--<h6><%= t('spree.login_as_existing') %></h6>-->
+        <div data-hook="login">
+        
+          <%= render partial: 'spree/shared/login' %>
+          <div class="no_account">
+            <p>Vous n'avez pas encore de compte ?</p>
+            <div data-hook="login_extras">
+            </div>
+            <%= link_to "Inscrivez-vous.", spree.signup_path, class:"signup_link" %>
+          </div>
+        </div>
+      </div>    
+    </div>
   </div>
 </div>
-<div data-hook="login_extras"></div>
