@@ -1,21 +1,41 @@
-<% @body_id = 'signup' %>
+<div class="login_page_container">
+  <div class="login_page">
+    <div class="login_img_container">
+      <img src="<%= image_url('logo.svg') %>">
+    </div>
+    <h2>Bienvenue sur Culture Campus™,<br>inscrivez-vous.</h2>
+    <div>
+      <% if flash[:alert] %>
+        <div class="flash errors"><%= flash[:alert] %></div>
+      <% end %>
+      
+      <% @body_id = 'signup' %>
+      <%= render 'spree/shared/error_messages', target: resource %>
 
-<%= render 'spree/shared/error_messages', target: resource %>
+      <div id="new-customer">
+        <!--<h6><%= t('spree.new_customer') %></h6>-->
 
-<div id="new-customer">
-  <h6><%= t('spree.new_customer') %></h6>
+        <div data-hook="signup" class="signup_container">
+          <%= form_for resource, as: :spree_user, url: spree.registration_path(resource) do |f| %>
+            <div data-hook="signup_inside_form">
+              <%= render partial: 'spree/shared/user_form', locals: { f: f } %>
+              <p class="legal">
+              En vous connectant, vous acceptez de vous conformer à notre Politique de confidentialité et à nos Conditions générales d’utilisation.
+              </p>
+              <p><%= f.submit "M'inscrire", class: 'button button-primary button-login signup_button' %></p>
 
-  <div data-hook="signup">
-    <%= form_for resource, as: :spree_user, url: spree.registration_path(resource) do |f| %>
-      <div data-hook="signup_inside_form">
-        <%= render partial: 'spree/shared/user_form', locals: { f: f } %>
-        <p><%= f.submit t('spree.create'), class: 'button primary' %></p>
+              <div class="no_account">
+                <p>Vous possédez déjà un compte ?</p>
+                <div data-hook="login_extras">
+                </div>
+                <%= link_to "Connectez-vous.", spree.login_path, class:"signup_link" %>
+              </div>
+
+            </div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
-    <%= t('spree.or') %>&nbsp;<%= link_to t('spree.login_as_existing'), spree.login_path %>
 
+    </div>
   </div>
-
 </div>
-
-<div data-hook="login_extras"></div>

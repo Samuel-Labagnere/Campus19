@@ -1,16 +1,16 @@
 <p>
-  <%= f.label :email, t('spree.email') %><br />
-  <%= f.email_field :email, class: 'title' %>
+  <%#= f.label :email, t('spree.email') %>
+  <%= f.email_field :email, class: 'title', placeholder:"Adresse e-mail" %>
 </p>
 <div id="password-credentials">
   <p>
-    <%= f.label :password, t('spree.password') %><br />
-    <%= f.password_field :password, class: 'title' %>
+    <%#= f.label :password, t('spree.password') %>
+    <%= f.password_field :password, class: 'title', placeholder:"Mot de passe" %>
   </p>
 
   <p>
-    <%= f.label :password_confirmation, t('spree.confirm_password') %><br />
-    <%= f.password_field :password_confirmation, class: 'title' %>
+    <%#= f.label :password_confirmation, t('spree.confirm_password') %>
+    <%= f.password_field :password_confirmation, class: 'title', placeholder:"Confirmation mot de passe" %>
   </p>
 </div>
 

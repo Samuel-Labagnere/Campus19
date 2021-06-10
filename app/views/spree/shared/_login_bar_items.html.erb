@@ -1,7 +1,7 @@
 <% if spree_current_user %>
-  <li class="login">
+  <li class="loged_in">
   <%#= link_to t('Profil'), spree.account_path, class: 'profile' %>
-    <a href="/account"><img src="<%= image_url('profil.svg') %>" class="login"></a>
+    <a href="/account"><img src="<%= image_url('profil.svg') %>" class="loged_in"></a>
   </li>
   <!--<li>
     <%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %>
@@ -16,27 +16,6 @@
 
 <!-- ancien boutton -->
 
-  <button class="open-pop-up login" onclick="openForm()">Login</button>
-  <div class="pop-up">
-    <button class="close-pop-up cross" onclick="closeForm()">
-      <span class="cross-line cross-line-1"></span>
-      <span class="cross-line cross-line-2"></span>
-    </button>
-    <h2>Bienvenue sur Culture Campus™,<br>connectez-vous.</h2>
-    <div>
-      <% if flash[:alert] %>
-        <div class="flash errors"><%= flash[:alert] %></div>
-      <% end %>
-      
-      <% @body_id = 'login' %>
-      <div id="existing-customer">
-        <!--<h6><%= t('spree.login_as_existing') %></h6>-->
-        <div data-hook="login">
-          <%= render partial: 'spree/shared/login' %>
-          <%= link_to t('spree.create_a_new_account'), spree.signup_path %>
-        </div>
-      </div>
-      <p>Vous n'avez pas encore de compte ?</p><div data-hook="login_extras"></div>
-    </div>
-  </div>
+  <button class="open-pop-up button-secondary login button-login"><a href="/login">Connexion</a></button>
+
 <% end %>
