@@ -1,18 +1,34 @@
 .product_content{
     display: block ruby;
+
+    margin-top: 3em;
 }
 
 .leftpart_product{
     width: 45%;
 }
+
 #product-images{
     display: flex;
 }
 #product-images #main-image{
     border: none;
 }
+#product-images #main-image img{
+    border-radius: 10px;
+}
+
 #product-thumbnails{
     display: grid;
+
+    margin-left: 2em;
+}
+#product-images #product-thumbnails li{
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+#product-thumbnails li img{
+    padding: 0;
 }
 
 
