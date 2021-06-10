@@ -1,11 +1,11 @@
 <%= form_for :order, :url => variant_populate_orders_path do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_dynamic_variant_product_cart_form">
 
-      <% @product.option_types.each do |ot| %>
-          <p class='product-titles'><%= ot.presentation %> : </p>
-          <%= select("options", ot.id, ot.option_values.collect {|ov| [ ov.presentation, ov.id ] }) %>
-      <% end %>
-    <!--<%= hidden_field_tag "product_id", @product.id %> /!\NE PAS LE CACHER/!\ -->
+    <% @product.option_types.each do |ot| %>
+      <p class="product-titles"><%= ot.presentation  %> : </p>
+      <p class="product-titles"><%= select("options", ot.id, ot.option_values.collect {|ov| [ ov.presentation, ov.id ] }) %></p >
+    <% end %>
+    <%= hidden_field_tag "product_id", @product.id %> <!--/!\NE PAS LE CACHER/!\ -->
 
     <% if @product.price_for(current_pricing_options) and !@product.price.nil? %>
       <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
@@ -20,8 +20,8 @@
           </div>
         </div>-->
 
-        <div>
-          <p class='product-titles'><%= "Quantité : "%></p>
+        <div class="add-to-cart">
+          <p class="product-titles">Quantité : </p>
           <%= number_field_tag :quantity, 1, :class => 'title', :min => 1 %>
           <%= button_tag :class => 'button-primary', :id => 'add-to-cart-button', :type => :submit do %>
             <%= "Mettre au panier" %>

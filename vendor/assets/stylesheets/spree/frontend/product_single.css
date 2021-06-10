@@ -5,6 +5,17 @@
 .leftpart_product{
     width: 45%;
 }
+#product-images{
+    display: flex;
+}
+#product-images #main-image{
+    border: none;
+}
+#product-thumbnails{
+    display: grid;
+}
+
+
 .rightpart_product{
     width: 35%;
     float: right;
@@ -17,8 +28,9 @@
 #add-to-cart-button{
     font-size: 20px !important;
 
+    display: grid;
+
     padding: 1em 5em 1em 5em;
-    
     margin: 2em 0 2em 0;
 }
 
@@ -26,5 +38,6 @@
     font-family: 'Gilroy' !important;
     font-size: 16px !important;
     border: none !important;
+    color: #202020 !important;
 }
 
