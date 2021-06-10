@@ -36,7 +36,7 @@ ul#products li {
 }
 
 .ul-product-list{
-    /* padding: 0 4vw; */
+    padding: 4vh 4vw;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, 253px);
