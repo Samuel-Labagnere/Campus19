@@ -38,8 +38,16 @@
     display: flex;
     justify-content: end;
 }
+#update-button{
+    position: absolute;
+    margin-right: 130px;
+}
 #clear_cart{
     margin-left: 1em;
+}
+
+#cart-detail{
+    margin-top: 30px;
 }
 
 #recap{

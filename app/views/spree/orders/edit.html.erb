@@ -20,7 +20,15 @@
       <%= form_for @order, url: update_cart_path, html: {id: 'update-cart'} do |order_form| %>
         <div id="upper_buttons" class="links columns sixteen alpha omega" data-hook="cart_buttons">
         <%= button_tag 'rafraîchir', class: "button-secondary", id: 'update-button' %>
+        <div data-hook="inside_cart_form">
+
+          <div data-hook="cart_items">
+            <%= render 'spree/orders/form', order_form: order_form %>
+          </div>
+
+        </div>
       <% end %>
+      
       <%= form_tag empty_cart_path, id: 'clear_cart_form', method: :put do %>
         <%= submit_tag 'vider le panier', class: 'button-secondary', id: 'clear_cart' %>
         </div>
@@ -33,14 +41,6 @@
             <p class="p_cart">Un code promo ?</p>
             <%= render template: 'spree/coupon_codes/new' %>
             <%= button_tag 'Passer au paiement', class: 'button checkout primary', id: 'checkout-link', name: 'checkout'%>
-        </div>
-
-        <div data-hook="inside_cart_form">
-
-          <div data-hook="cart_items">
-            <%= render 'spree/orders/form', order_form: order_form %>
-          </div>
-
         </div>
       <% end %>
 

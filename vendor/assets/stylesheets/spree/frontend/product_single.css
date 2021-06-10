@@ -33,21 +33,32 @@
 
 
 .rightpart_product{
-    width: 35%;
+    width: 30%;
     float: right;
     margin-right: 10%;
 }
 
+.container .five.columns{
+    width: 100%;
+}
 #inside-product-cart-form{
     display: grid;
 }
 #add-to-cart-button{
-    font-size: 20px !important;
+    font-size: 16px !important;
+    text-transform: uppercase;
 
     display: grid;
 
-    padding: 1em 5em 1em 5em;
+    padding: 0.75em 0em 0.75em 0em;
     margin: 2em 0 2em 0;
+    width: 100%;
+
+    background-color: #ED5466 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    transition: .3s ease-in-out;
 }
 
 .product-titles{

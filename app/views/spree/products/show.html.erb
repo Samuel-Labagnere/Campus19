@@ -14,10 +14,6 @@
           </div>
         </div>
 
-        <!--<div data-hook="product_properties">
-          <%= render partial: 'properties' %>
-        </div>-->
-
         <div data-hook="promotions">
           <%= render partial: 'promotions' %>
         </div>
@@ -43,6 +39,10 @@
 
           <div itemprop="description" data-hook="description">
             <%= product_description(@product) rescue t('spree.product_has_no_description') %>
+          </div>
+
+          <div data-hook="product_properties">
+          <%= render partial: 'properties' %>
           </div>
 
         </div>

@@ -17,7 +17,7 @@
                 <% end %>
 
                 <% unless variant.can_supply? %>
-                  <span class="out-of-stock"><%= t('spree.out_of_stock') %></span>
+                  <span class="out-of-stock"><%= "En rupture de stock" %></span>
                 <% end %>
               <% end %>
             </li>
@@ -32,26 +32,26 @@
       <div data-hook="product_price" class="columns five <%= !@product.has_variants? ? 'alpha' : 'omega' %>">
 
         <div id="product-price">
-          <h6 class="product-section-title"><%= t('spree.price') %></h6>
+          <!--<h6 class="product-section-title"><%= t('spree.price') %></h6>
           <div>
             <span class="price selling" itemprop="price" content="<%= @product.price_for(current_pricing_options).to_d %>">
               <%= display_price(@product) %>
             </span>
             <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
-          </div>
+          </div>-->
 
           <% if @product.master.can_supply? %>
             <link itemprop="availability" href="http://schema.org/InStock" />
           <% elsif @product.variants.empty? %>
             <br />
-            <span class="out-of-stock"><%= t('spree.out_of_stock') %></span>
+            <span class="out-of-stock"><%= "En rupture de stock" %></span>
           <% end %>
         </div>
 
         <div class="add-to-cart">
           <%= number_field_tag :quantity, 1, class: 'title', min: 1 %>
           <%= button_tag class: 'large primary', id: 'add-to-cart-button', type: :submit do %>
-            <%= t('spree.add_to_cart') %>
+            <%= "Mettre au panier" %>
           <% end %>
         </div>
       </div>
