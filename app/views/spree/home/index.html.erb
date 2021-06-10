@@ -3,27 +3,29 @@
   <h2>Découvrez notre nouvelle collection !<br>Héritage</h2>
   <button class="button button-secondary">Découvrir</button>
 </section>
-<section class="collection-home">
-  <h2>Nos collections</h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into el</p>
-  <button class="button button-primary">Découvrir</button>
-</section>
-<section class="category-home-container">
-  <div class="category-home category-home-left">
-    <span class="category-btn-container">
-      <h3>Nos Sweats</h3>
+<div class="container">
+  <section class="collection-home">
+    <h2>Nos collections</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into el</p>
+    <button class="button button-primary">Découvrir</button>
+  </section>
+  <section class="category-home-container">
+    <div class="category-home category-home-left">
+      <span class="category-btn-container">
+        <h3>Nos Sweats</h3>
+        <button class="button category-btn">Voir</button>
+      </span>
+    </div>
+    <div class="category-home category-home-right">
+      <span class="category-btn-container">
+      <h3>Nos T-Shirts</h3>
       <button class="button category-btn">Voir</button>
-    </span>
-  </div>
-  <div class="category-home category-home-right">
-    <span class="category-btn-container">
-    <h3>Nos T-Shirts</h3>
-    <button class="button category-btn">Voir</button>
-  </div>
-</section>
-<section class="selection-home">
-  <h2>Notre selection</h2>
-  <ul>
-    <li><li>
-  </ul>
-</section>
+    </div>
+  </section>
+  <section class="selection-home">
+    <h2>Notre selection</h2>
+    <div data-hook="taxon_products">
+      <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @selection } %>
+    </div>
+  </section>
+</div>
