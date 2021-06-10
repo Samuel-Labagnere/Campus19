@@ -11,3 +11,27 @@ text-align: center;
 line-height: 90px;
 margin-bottom: 1em;
 }
+
+li.next, li.last, .steps li {
+    background-color: #494949 !important;
+    color: #ffffff;
+    border: none;
+    border-radius: 21px;
+}
+
+li.current-first, li.current, li.current-last {
+    background-color: #F7AB01 !important;
+    border: none;
+    border-radius: 21px;
+}
+
+li.completed-first, li.completed, li.completed-last {
+    background-color: #50D77E !important;
+    border: none;
+    border-radius: 21px;
+}
+
+.completed-first a, .completed a {
+    color: #ffffff !important;
+}
+
