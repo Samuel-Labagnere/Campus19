@@ -7,7 +7,7 @@ width: 80%;
 
 ul#products li {
     width: 253px;
-    margin: 5vh 7%;
+    /* margin: 5vh 4vw; */
     text-align: initial;
 }
 .container .three.columns {
@@ -37,10 +37,11 @@ ul#products li {
 
 .ul-product-list{
     /* padding: 0 4vw; */
-    display: flex;
+    display: grid;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 253px);
+    justify-content: space-between;
+    column-gap: 4vw;
 }
 
 .container .twelve.columns {

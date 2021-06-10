@@ -24,8 +24,8 @@
   </section>
   <section class="selection-home">
     <h2>Notre selection</h2>
-    <ul>
-      <li><li>
-    </ul>
+    <div data-hook="taxon_products">
+      <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @selection } %>
+    </div>
   </section>
 </div>
