@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_132149) do
+ActiveRecord::Schema.define(version: 2021_06_10_105554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -288,7 +288,6 @@ ActiveRecord::Schema.define(version: 2021_06_08_132149) do
     t.integer "option_type_id"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
-    t.decimal "surcharge", precision: 8, scale: 2, default: "0.0"
     t.index ["option_type_id"], name: "index_spree_option_values_on_option_type_id"
     t.index ["position"], name: "index_spree_option_values_on_position"
   end
@@ -476,7 +475,6 @@ ActiveRecord::Schema.define(version: 2021_06_08_132149) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
-    t.boolean "dynamic_variants", default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["name"], name: "index_spree_products_on_name"

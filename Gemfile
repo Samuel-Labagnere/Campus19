@@ -64,5 +64,3 @@ gem 'solidus_auth_devise'
 
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
-
-gem 'solidus_dynamic_variants', github: 'max-las/solidus_dynamic_variants'
