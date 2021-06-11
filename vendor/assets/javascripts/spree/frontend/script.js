@@ -52,7 +52,7 @@ $(document).ready(function(){
         var variant = variantStr.split(", ");
         var variantObj = new Object();
 
-        var i, optionArr;
+        var i;
         for(i = 0; i < variant.length; i++){
             option = variant[i].split(": ");
             variantObj[option[0]] = option[1];
@@ -109,10 +109,26 @@ $(document).ready(function(){
 
     $("#option-type-0").change(function(){
         var optionType = $("label[for=option-type-0]").html();
-        var selectedValue = $(this).val();
-        var optionValue = $("option[value="+selectedValue+"]").html();
-        variants.filter(function(variant){
+        var optionValue = $("option[value=" + $(this).val() + "]").html();
+        var filtered = variants.filter(function(variant){
             return variant[optionType] == optionValue;
+        });
+
+        $(".optionType-select").each(function(){
+            if($(this).attr("id") != "option-type-0"){
+                var optionType = $("label[for=" + $(this).attr("id") + "]").html();
+                $(this).children("option").each(function(){
+                    var optionValue = $(this).html();
+                    var valid = filtered.filter(function(variant){
+                        return variant[optionType] == optionValue;
+                    });
+                    if(valid.length < 1){
+                        $(this).attr("disabled", true);
+                    }else{
+                        $(this).removeAttr("disabled");
+                    }
+                });
+            }
         });
     });
 });
