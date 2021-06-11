@@ -5,7 +5,7 @@
       <button class="button button-secondary email_button"><%= link_to t('Modifer'), spree.edit_account_path %></button>
       <% if spree_current_user %>
         <button class="button button-secondary email_button button_logout">
-          <%= link_to "Dexonnexion", spree.logout_path, method: Devise.sign_out_via %>
+          <%= link_to "Deconnexion", spree.logout_path, method: Devise.sign_out_via %>
         </button>
       <% end %>
     </div>
