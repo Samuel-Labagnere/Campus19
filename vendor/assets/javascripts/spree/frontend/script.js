@@ -63,6 +63,7 @@ $(document).ready(function(){
 
     var customVariantsDiv = document.createElement("div");
     customVariantsDiv.id = "product-custom-variants";
+    customVariantsDiv.class = "product-titles";
     $(customVariantsDiv).insertAfter("#product-variants");
 
     var i = -1;

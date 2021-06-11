@@ -38,6 +38,9 @@
     margin-right: 10%;
 }
 
+#product-variants{
+    display: none;
+}
 .container .five.columns{
     width: 100%;
 }
