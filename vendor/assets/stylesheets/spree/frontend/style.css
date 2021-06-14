@@ -73,3 +73,7 @@ input {
   border: none !important;
   border-radius: 10px !important;
 }
+
+#product-variants {
+  display: none;
+}

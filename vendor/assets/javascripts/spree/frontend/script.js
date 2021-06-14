@@ -106,15 +106,21 @@ $(document).ready(function(){
         return values;
     }
 
-    $("#option-type-0").change(function(){
-        var optionType = $("label[for=option-type-0]").html();
-        var optionValue = $("option[value=" + $(this).val() + "]").html();
+    $('input[type=radio]').change(function(){
+        console.log("changed");
+    });
+
+    $(".optionType-select").change(function(){
+        var optionType = $("label[for=" + $(this).attr("id") + "]").html();
+        var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
         var filtered = variants.filter(function(variant){
             return variant[optionType] == optionValue;
         });
 
+        var changedId = $(this).attr("id");
+
         $(".optionType-select").each(function(){
-            if($(this).attr("id") != "option-type-0"){
+            if($(this).attr("id") != "option-type-0" && $(this).attr("id") != changedId){
                 var optionType = $("label[for=" + $(this).attr("id") + "]").html();
                 $(this).children("option").each(function(){
                     var optionValue = $(this).html();
@@ -128,6 +134,51 @@ $(document).ready(function(){
                     }
                 });
             }
+            if(!$(this).val()){
+                // alert('Cpasbon');
+                var toSelect = $(this).children('option:not([disabled]):first').val();
+                $(this).val(toSelect);
+            }
         });
+        var myCurrentVariant = currentVariant();
+        $('#product-variants li').each(function(){
+            var previous;
+            if($(this).find('.variant-description').html().trim() == myCurrentVariant){
+                $(this).find('input').click();
+            }
+        });
+
     });
+
+    function currentVariant(){
+        var myVariant = new Object();
+
+        $(".optionType-select").each(function(){
+            var optionType = $("label[for=" + $(this).attr("id") + "]").html();
+            var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
+            
+            myVariant[optionType] = optionValue;
+        });
+        
+        var theVariant = variants.filter(function(variant){
+            var pass = true;
+            for ([key, value] of Object.entries(variant)){
+                if(myVariant[key] != value){
+                    pass = false;
+                }
+            }
+            return pass;
+        });
+
+        return variantToString(theVariant[0]);
+    }
+
+    function variantToString(variant){
+        var str = "";
+        for ([key, value] of Object.entries(variant)){
+            str = str + key + ": " + value + ", ";
+        }
+        return str.slice(0, -2);
+    }
+
 });
