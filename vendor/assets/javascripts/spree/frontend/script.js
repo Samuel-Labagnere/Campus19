@@ -150,6 +150,8 @@ $(document).ready(function(){
 
     });
 
+    $("#option-type-0").trigger("change");
+
     function currentVariant(){
         var myVariant = new Object();
 
