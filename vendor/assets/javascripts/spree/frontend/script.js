@@ -106,13 +106,10 @@ $(document).ready(function(){
         return values;
     }
 
-    $('input[type=radio]').change(function(){
-        console.log("changed");
-    });
-
     $(".optionType-select").change(function(){
         var optionType = $("label[for=" + $(this).attr("id") + "]").html();
         var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
+        
         var filtered = variants.filter(function(variant){
             return variant[optionType] == optionValue;
         });
@@ -120,7 +117,9 @@ $(document).ready(function(){
         var changedId = $(this).attr("id");
 
         $(".optionType-select").each(function(){
+            var disabled = false;
             if($(this).attr("id") != "option-type-0" && $(this).attr("id") != changedId){
+                disabled = true;
                 var optionType = $("label[for=" + $(this).attr("id") + "]").html();
                 $(this).children("option").each(function(){
                     var optionValue = $(this).html();
@@ -130,6 +129,7 @@ $(document).ready(function(){
                     if(valid.length < 1){
                         $(this).attr("disabled", true);
                     }else{
+                        disabled = false;
                         $(this).removeAttr("disabled");
                     }
                 });
@@ -138,6 +138,12 @@ $(document).ready(function(){
                 // alert('Cpasbon');
                 var toSelect = $(this).children('option:not([disabled]):first').val();
                 $(this).val(toSelect);
+            }
+
+            if(disabled){
+                $(this).attr("disabled", true);
+            }else{
+                $(this).removeAttr("disabled");
             }
         });
         var myCurrentVariant = currentVariant();
@@ -150,7 +156,9 @@ $(document).ready(function(){
 
     });
 
-    $("#option-type-0").trigger("change");
+    setTimeout(function(){
+        $("#option-type-0").trigger("change");
+    }, 0);
 
     function currentVariant(){
         var myVariant = new Object();
