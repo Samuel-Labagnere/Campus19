@@ -165,3 +165,23 @@ $(document).ready(function(){
     }
 
 });
+
+//couleurs page tous produits
+$(document).ready(function(){
+
+    $(".product-img").hide();
+
+    $(".product-image").each(function(){
+        $(this).find(".product-img").filter(function(){
+            return $(this).children("img").length > 0;
+        }).first().show();
+    });
+
+    $(".shirt").click(function(){
+        $(this).parents(".li-product-list").find(".product-img").hide();
+        var classes = $(this).attr("class").split(/\s+/);
+        var variantId = classes[classes.length -1];
+        $(this).parents(".li-product-list").find(".product-img." + variantId).show();
+    });
+   
+});

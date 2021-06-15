@@ -1,7 +1,8 @@
 <% if spree_current_user %>
-  <li class="logged_in">
+  <li id='connexion' class="logged_in">
   <%#= link_to t('Profil'), spree.account_path, class: 'profile' %>
-    <a href="/account"><img src="<%= image_url('profil.svg') %>" class="logged_in"></a>
+    <button class="open-pop-up login button-login"><a href="/account"><img class='logged_in' src="<%= image_url('profil.svg') %>"></a></button>
+    
   </li>
   <!--<li>
     <%= link_to t('spree.logout'), spree.logout_path, method: Devise.sign_out_via %>
@@ -15,7 +16,7 @@
 =end %>
 
 <!-- ancien boutton -->
-
-  <button class="open-pop-up login button-login"><img src="<%= image_url('profil.svg') %>"><a href="/login">Connexion</a></button>
-
+<li id='connexion'>
+  <button class="open-pop-up login button-login"><a href="/login"><img src="<%= image_url('profil.svg') %>">Connexion</a></button>
+</li>
 <% end %>

@@ -35,7 +35,10 @@
         <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
 
           <div class="product-image"> <!-- image produit -->
-            <%= link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
+            <%# link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
+            <% product.variants_including_master.each do |variant| %>
+              <%= link_to(render('spree/shared/image', image: variant.images.first, size: :small, itemprop: "image"), url, itemprop: 'url', class: "product-img #{variant.id}") %>
+            <% end %>
           </div>
 
           <%= link_to truncate(product.name, length: 50), url, class: 'nom', itemprop: "name", title: product.name %> <!-- Nom produit -->
@@ -64,11 +67,9 @@
                 variant.option_values.each do |option_value|
                   option = option_value.presentation_with_option_type.split(" - ")
                   if option[0] == "Color"
-                    if option[1] == "Blue"
-                    %>
-                      <button class="shirt shirt-blue"></button>
-                    <%
-                    end
+                  %>
+                      <button style="background-color: <%= option_value.name %>"class="shirt <%= variant.id %>"></button>
+                  <%
                   end
                 end
               end
