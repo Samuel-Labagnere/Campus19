@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/solidusio/solidus_i18n.git
+  revision: 502e467babda9d01cc3c9da71dd300c56dacb899
+  specs:
+    solidus_i18n (2.1.0)
+      solidus_core (>= 1.1, < 4)
+      solidus_support (~> 0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -171,6 +179,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     kt-paperclip (6.4.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -243,6 +254,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.1.3.2)
       actionpack (= 6.1.3.2)
       activesupport (= 6.1.3.2)
@@ -409,15 +423,18 @@ DEPENDENCIES
   capybara (>= 3.26)
   ed25519
   jbuilder (~> 2.7)
+  kaminari-i18n
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.2)
+  rails-i18n
   sass-rails (>= 6)
   selenium-webdriver
   solidus (~> 3.0)
   solidus_auth_devise
+  solidus_i18n!
   spring
   turbolinks (~> 5)
   tzinfo-data
