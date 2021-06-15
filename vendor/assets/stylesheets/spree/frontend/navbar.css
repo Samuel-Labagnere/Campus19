@@ -28,6 +28,10 @@ header {
 nav#top-nav-bar ul li a {
     text-decoration: none !important;
     text-transform: none !important;
+    
+    font-family: 'Gilroy' !important;
+    font-size: 14px !important;
+    color: #202020 !important;
 }
 
 #header{
@@ -53,34 +57,31 @@ nav#top-nav-bar ul li a {
 }
 
 #top-nav-bar li:nth-last-child(2), .open-pop-up {
-    margin-left: auto !important;
-    margin: 0 15px;
+    margin: 0;
+    padding-top: 9px !important;
+    padding-bottom: 10px !important;
 }
+
 
 #logo {
     margin: 0;
 }
 
 #search-bar {
-    padding-left: 25px !important;
+    padding: 0 25px !important;
+}
+
+#connexion {
+    padding: 0 !important;
+    margin-right: 25px !important;
 }
 
 #link-to-cart {
-    padding: 8px 15px !important;
+    padding: 11px 15px 10px 15px !important;
     border-radius: 100px;
     background-color: #f4e2e4 !important;
 }
 
-#top-nav-bar li:nth-last-child(2) {
-    background-color: #F4E2E4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 0;
-}
 
 /* Search bar clicked */
 
