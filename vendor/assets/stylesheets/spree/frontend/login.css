@@ -48,25 +48,35 @@
 
 .button-login {
     padding: 10px 0 !important;
+    border-radius: 100px;
+    background-color: #f4e2e4 !important;
     text-align: center;
     width: 11vw;
     display: block;
     margin: 4vh auto;
+    width: fit-content;
+    padding: 8px 15px !important;
+    box-shadow: none !important;
+    border: none;
 }
-.loged_in{
+
+.button-login img, .button-login a {
+    vertical-align: middle !important;
+}
+
+.button-login img {
+    margin-right: 5px;
+}
+
+.logged_in{
     width: 18.9px;
     height: auto;
     opacity: 50%;
 }
 .login{
-    width: 18.9px;
     height: auto;
 }
-.button-login {
-    width: fit-content;
-    padding: 7px 13px !important;
-    box-shadow: none !important;
-}
+
 .no_account{
     display: flex;
     align-items: center;

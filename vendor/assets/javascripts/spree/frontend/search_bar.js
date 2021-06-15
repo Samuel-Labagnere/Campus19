@@ -11,6 +11,7 @@ function extendHeader() {
   $(".inputgroup").css("width", "40vw")
   $(".blur").css("display", "block")
   $(".home-container").css("padding", "0")
+  $(".logged_in").css("display", "none")
 }
 
 function reduceHeader() {
@@ -25,6 +26,7 @@ function reduceHeader() {
   $(".inputgroup").css("width", "210px")
   $(".blur").css("display", "none")
   $(".home-container").css("padding", "")
+  $(".logged_in").css("display", "flex")
 }
 
 $(document).ready(function() {

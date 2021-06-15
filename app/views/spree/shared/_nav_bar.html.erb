@@ -1,11 +1,11 @@
 <nav id="top-nav-bar" class="columns ten">
   <ul id="nav-bar" class="inline" data-hook>
     <li class="left-side-nav"><a href="/products">Collection</a></li>
-    <li class="left-side-nav"><a href="https://google.com">Nouveautés</a></li>
-    <li class="left-side-nav"><a href="https://google.com">Sweat</a></li>
-    <li class="left-side-nav"><a href="https://google.com">T-Shirt</a></li>
-    <li class="left-side-nav"><a href="https://google.com">Nos magasins</a></li>
-    <%= render 'spree/shared/locale_selector' %>
+    <li class="left-side-nav"><a href="/t/categories/clothing">Nouveautés</a></li>
+    <li class="left-side-nav"><a href="/t/categories/clothing/shirts">Sweat</a></li>
+    <li class="left-side-nav"><a href="/t/categories/clothing/t-shirts">T-Shirt</a></li>
+    <li class="left-side-nav"><a href="https://google.com">Nos points de vente</a></li>
+    <%# render 'spree/shared/locale_selector' %>
     </li>
     <li id="search-bar" data-hook onclick="extendHeader()">
       <%= render partial: 'spree/shared/search' %>
@@ -22,5 +22,5 @@
       &nbsp;
     </li>
   </ul>
-  <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
+    <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
 </nav>
