@@ -33,7 +33,7 @@
             </span>
         </div>
 
-          <div id="cart-form" data-hook="cart_form">
+          <div class="product-titles" id="cart-form" data-hook="cart_form">
             <%= render partial: 'cart_form' %>
           </div>
 
@@ -41,9 +41,18 @@
             <%= product_description(@product) rescue t('spree.product_has_no_description') %>
           </div>
 
-          <div data-hook="product_properties">
+<details>
+    <summary class="list">
+      <div class="product-details">
+        <p>Détails</p>
+        <img src="http://127.0.0.1:3000/assets/up-0f38483f999a37e5f70c43bcde05962afeb836a3a51c9b59e36b9f482fa055a3.svg" class="imgRotateInvers">
+      </div>
+    </summary>
+      <div data-hook="product_properties">
           <%= render partial: 'properties' %>
-          </div>
+      </div>
+    </details>
+          
 
         </div>
 

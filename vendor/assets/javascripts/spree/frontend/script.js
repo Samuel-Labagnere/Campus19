@@ -40,16 +40,9 @@ $(document).ready(function(){
         for ([key, value] of Object.entries(variants[0])){
             i++;
 
-<<<<<<< HEAD
-    var customVariantsDiv = document.createElement("div");
-    customVariantsDiv.id = "product-custom-variants";
-    customVariantsDiv.class = "product-titles";
-    $(customVariantsDiv).insertAfter("#product-variants");
-=======
             var label = document.createElement("label");
             label.setAttribute("for", "option-type-" + i);
             label.innerHTML = key;
->>>>>>> 384f7de01ef692f37dd97dbe085dcb4d653d502a
 
             var select = document.createElement("select");
             select.id = "option-type-" + i;

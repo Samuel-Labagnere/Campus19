@@ -49,6 +49,7 @@
         </div>
 
         <div class="add-to-cart">
+          <p class='product-titles'>Quantité : </p>
           <%= number_field_tag :quantity, 1, class: 'title', min: 1 %>
           <%= button_tag class: 'large primary', id: 'add-to-cart-button', type: :submit do %>
             <%= "Mettre au panier" %>

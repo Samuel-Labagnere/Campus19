@@ -24,10 +24,12 @@
     margin-left: 2em;
 }
 #product-images #product-thumbnails li{
-    border-radius: 10px;
-    margin-bottom: 1em;
+    border: none;
+    margin: 0 0 1em 0;
 }
 #product-thumbnails li img{
+    border-radius: 10px;
+    width: 48px;
     padding: 0;
 }
 
@@ -41,10 +43,16 @@
 #product-variants{
     display: none;
 }
+input, label{
+    padding: 10px 0 10px 0;
+}
 .container .five.columns{
     width: 100%;
 }
 #inside-product-cart-form{
+    display: grid;
+}
+#product-custom-variants{
     display: grid;
 }
 #add-to-cart-button{
@@ -63,11 +71,25 @@
     border-radius: 10px !important;
     transition: .3s ease-in-out;
 }
+.add-to-cart input {
+    padding-right: 5px !important;
+    width: 60px !important;
+}
 
 .product-titles{
     font-family: 'Gilroy' !important;
     font-size: 16px !important;
     border: none !important;
     color: #202020 !important;
+
+    padding: 10px 0 10px 0;
+}
+
+.product-details{
+    justify-content: space-between;
+    display: flex;
+    padding: 6px 0 6px 0;
+    margin-top: 2em;
+    border-top: solid 1px #20202080;
 }
 
