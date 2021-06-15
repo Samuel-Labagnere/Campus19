@@ -27,6 +27,7 @@
   <% end %>
   <ul id="products" class="inline product-listing ul-product-list" data-hook>
     <% products.each do |product| %>
+
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
 
       <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", name: "classes") %> li-product-list" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
@@ -52,13 +53,28 @@
             <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
           </span>
           <div class="colors">
-            <button class="shirt shirt-orange"></button>
+            <%# <button class="shirt shirt-orange"></button>
             <button class="shirt shirt-blue"></button>
             <button class="shirt shirt-blue2"></button>
             <button class="shirt shirt-black"></button>
             <button class="shirt shirt-green"></button>
-            <button class="shirt shirt-white"></button>
+            <button class="shirt shirt-white"></button> %>
+            <%
+              product.variants_including_master.each do |variant|
+                variant.option_values.each do |option_value|
+                  option = option_value.presentation_with_option_type.split(" - ")
+                  if option[0] == "Color"
+                    if option[1] == "Blue"
+                    %>
+                      <button class="shirt shirt-blue"></button>
+                    <%
+                    end
+                  end
+                end
+              end
+            %>
           </div>
+          
         <% end %>
       </li>
     <% end %>
