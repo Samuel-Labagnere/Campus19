@@ -1,4 +1,6 @@
-<h3><%= t('spree.order_summary') %></h3>
+<div class="summary_payment">
+
+<h3>Récapitulatif</h3>
 
 <table data-hook="order_summary">
   <tbody>
@@ -71,6 +73,8 @@
   </tbody>
 </table>
 
+
 <% if order.state == 'payment' %>
   <%= render 'coupon_code', order: order %>
 <% end %>
+</div>

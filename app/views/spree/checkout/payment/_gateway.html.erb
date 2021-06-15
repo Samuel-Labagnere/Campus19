@@ -1,4 +1,6 @@
-<%= image_tag 'credit_cards/credit_card.gif', id: 'credit-card-image' %>
+<div class="payment_creditcards">
+
+
 <% param_prefix = "payment_source[#{payment_method.id}]" %>
 
 <div class="field field-required card_name" data-hook="card_name">
@@ -35,3 +37,5 @@
 <% end %>
 
 <%= hidden_field_tag "#{param_prefix}[cc_type]", '', id: "cc_type", class: 'ccType' %>
+
+</div>

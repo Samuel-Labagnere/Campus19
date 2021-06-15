@@ -1,0 +1,123 @@
+.checkout_content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.payment_gateway{
+    width: 100%;
+}
+.payment{
+
+}
+.summary_payment{
+    /*background-color: white;*/
+}
+.coupon-code{
+    /*background-color: blueviolet;*/
+}
+
+.checkout_left{
+    width: 48% !important;
+}
+.payment_container{
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    border: none !important;
+    padding: 23px 52px !important;
+}
+#checkout-summary{
+    text-align: center;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: #F7F7F7 !important;
+    border-radius: 20px;
+    width: 48%;
+    height: fit-content;
+    border: none !important;
+}
+#checkout-summary h3, .payment_container h3{
+    border-bottom: none;
+    color: black;
+    font-size: 36px;
+    font-family: 'Gilroy', sans-serif;
+    padding: 20px 0;
+    text-align: center;
+    text-transform: none !important;
+}
+.payment, .payment_container{
+    border: none !important;
+    margin-top: 0px !important;
+}
+#payment-method-fields{
+    display: flex;
+    margin-top: 15px;
+}
+.payment_img_align{
+    display: flex;
+    align-items: center;
+}
+.radio_payment {
+    position:relative;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    width: 18.25px;
+    height: 18.25px;
+    margin:10px;
+    -webkit-border-radius:100px;
+        -moz-border-radius:100px;
+            border-radius:100px;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    background: none;
+    border: solid 1px #C4C4C4;
+}
+
+.radio_payment:checked {
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    background:#ED5466;
+}
+
+.radio_payment:checked:after{
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    background:transparent;
+}
+.cards{
+    height: 32px;
+    width: auto;
+    margin-left: 5px;
+}
+  
+.payment_mode_container h4, .method_container h4{
+    font-size: 24px;
+    font-family: 'Gilroy', sans-serif;
+    margin-top: 5px;
+    color: black;
+}
+.h4_method_container{
+    text-align: center;
+}
+.method_container{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 23px !important;
+}
+.form-buttons{
+    text-align: center;
+}
+.button-continue {
+    background-color: #9D9D9D !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    transition: .3s ease-in-out;
+    width: 435px !important;
+    height: 55.37px !important;
+  }
