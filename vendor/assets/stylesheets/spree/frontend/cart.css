@@ -20,9 +20,9 @@
     display: inline-flex;
 }
 
-h1.h1_cart{
+.h1_cart{
     font-size: 24px;
-    margin-bottom: 2em;
+    margin-top: 2em;
 }
 .h2_cart{
     font-size: 14px;
@@ -38,8 +38,16 @@ h1.h1_cart{
     display: flex;
     justify-content: end;
 }
+#update-button{
+    position: absolute;
+    margin-right: 130px;
+}
 #clear_cart{
     margin-left: 1em;
+}
+
+#cart-detail{
+    margin-top: 30px;
 }
 
 #recap{
@@ -47,10 +55,9 @@ h1.h1_cart{
     display: grid;
     justify-content: inherit;
     float: right;
-
-    /* width: 30%;
+    width: 30%;
     position: fixed;
-    margin-left: 55%; */
+    margin-left: 55%;
 }
 div#coupon_code{
     margin-bottom: 2em;
@@ -106,8 +113,6 @@ td.cart-item-image a img{
 }
 
 .line_item_quantity{
-    background-color: #f4e2e4;
-    border: none !important;
-    border-radius: 2em;
+    text-align: center;
 }
 

@@ -10,6 +10,13 @@ ul#products li {
     /* margin: 5vh 4vw; */
     text-align: initial;
 }
+ul#products li .product-image{
+    padding: 0;
+}
+ul#products li .product-image img{
+    border-radius: 10px;
+    height: 270px;
+}
 .container .three.columns {
     width: 180px;
 }

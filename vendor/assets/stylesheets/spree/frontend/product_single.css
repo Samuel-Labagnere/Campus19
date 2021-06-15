@@ -1,0 +1,95 @@
+.product_content{
+    display: block ruby;
+
+    margin-top: 3em;
+}
+
+.leftpart_product{
+    width: 45%;
+}
+
+#product-images{
+    display: flex;
+}
+#product-images #main-image{
+    border: none;
+}
+#product-images #main-image img{
+    border-radius: 10px;
+}
+
+#product-thumbnails{
+    display: grid;
+
+    margin-left: 2em;
+}
+#product-images #product-thumbnails li{
+    border: none;
+    margin: 0 0 1em 0;
+}
+#product-thumbnails li img{
+    border-radius: 10px;
+    width: 48px;
+    padding: 0;
+}
+
+
+.rightpart_product{
+    width: 30%;
+    float: right;
+    margin-right: 10%;
+}
+
+#product-variants{
+    display: none;
+}
+input, label{
+    padding: 10px 0 10px 0;
+}
+.container .five.columns{
+    width: 100%;
+}
+#inside-product-cart-form{
+    display: grid;
+}
+#product-custom-variants{
+    display: grid;
+}
+#add-to-cart-button{
+    font-size: 16px !important;
+    text-transform: uppercase;
+
+    display: grid;
+
+    padding: 0.75em 0em 0.75em 0em;
+    margin: 2em 0 2em 0;
+    width: 100%;
+
+    background-color: #ED5466 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    transition: .3s ease-in-out;
+}
+.add-to-cart input {
+    padding-right: 5px !important;
+    width: 60px !important;
+}
+
+.product-titles{
+    font-family: 'Gilroy' !important;
+    font-size: 16px !important;
+    border: none !important;
+    color: #202020 !important;
+
+    padding: 10px 0 10px 0;
+}
+
+.product-details{
+    justify-content: space-between;
+    display: flex;
+    padding: 6px 0 6px 0;
+    margin-top: 2em;
+    border-top: solid 1px #20202080;
+}
+
