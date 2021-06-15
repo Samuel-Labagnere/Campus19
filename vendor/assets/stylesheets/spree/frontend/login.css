@@ -67,12 +67,10 @@
 .button-login img {
     margin-right: 5px;
 }
-
-.logged_in{
-    width: 18.9px;
-    height: auto;
-    opacity: 50%;
+.button-login img.logged_in {
+    margin-right: 0;
 }
+
 .login{
     height: auto;
 }
