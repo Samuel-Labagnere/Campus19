@@ -22,10 +22,14 @@
       <button class="button category-btn">Voir</button>
     </div>
   </section>
-  <section class="selection-home">
-    <h2>Notre selection</h2>
-    <div data-hook="taxon_products">
-      <%= render partial: 'spree/shared/products', locals: { products: @selection_products, taxon: @selection } %>
-    </div>
-  </section>
+  <% if(!@selection.nil?) %>
+    <% if(!@selection_products.empty?) %>
+      <section class="selection-home">
+        <h2>Notre selection</h2>
+        <div data-hook="taxon_products">
+          <%= render partial: 'spree/shared/products', locals: { products: @selection_products, taxon: @selection } %>
+        </div>
+      </section>
+    <% end %>
+  <% end %>
 </div>
