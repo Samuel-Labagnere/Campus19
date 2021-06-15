@@ -64,9 +64,46 @@
                 variant.option_values.each do |option_value|
                   option = option_value.presentation_with_option_type.split(" - ")
                   if option[0] == "Color"
-                    if option[1] == "Blue"
+                    case option[1]
+                    when "Bleu"
                     %>
                       <button class="shirt shirt-blue"></button>
+                    <%
+                    when "Blanc"
+                    %>
+                      <button class="shirt shirt-white"></button>
+                    <%
+                    when "Rouge"
+                    %>
+                      <button class="shirt shirt-red"></button>
+                    <%
+                    when "Noir"
+                    %>
+                      <button class="shirt shirt-black"></button>
+                    <%
+                    when "Jaune"
+                    %>
+                      <button class="shirt shirt-yellow"></button>
+                    <%
+                    when "Orange"
+                    %>
+                      <button class="shirt shirt-orange"></button>
+                    <%
+                    when "Vert"
+                    %>
+                      <button class="shirt shirt-green"></button>
+                    <%
+                    when "Marron"
+                    %>
+                      <button class="shirt shirt-brown"></button>
+                    <%
+                    when "Violet"
+                    %>
+                      <button class="shirt shirt-violet"></button>
+                    <%
+                    when "Gris"
+                    %>
+                      <button class="shirt shirt-grey"></button>
                     <%
                     end
                   end
