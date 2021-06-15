@@ -12,42 +12,6 @@ $(document).ready(function() {
     })
 })
 
-//traductions manuelles
-$(document).ready(function(){
-    var waitFor = [".cart-info"];
-
-    waitForThem(0);
-
-    function waitForThem(count){
-        var i;
-        var ready = true;
-        for(i = 0; i < waitFor.length; i++){
-            if($(waitFor[i]).length < 1){
-                if(count < 500){
-                    setTimeout(function(){
-                        waitForThem(count+1);
-                    }, 100);
-                }
-                ready = false;
-                break;
-            }
-        }
-        if(ready){
-            whenTheyReady();
-        }
-    }
-
-    function whenTheyReady(){
-        $(".cart-info").each(function(){
-            var content = $(this).html();
-            content = content.replace("Cart", "Panier");
-            content = content.replace("Empty", "Vide");
-            $(this).html(content);
-            $(this).show();
-        });
-    }
-});
-
 //variantes custom
 $(document).ready(function(){
 
