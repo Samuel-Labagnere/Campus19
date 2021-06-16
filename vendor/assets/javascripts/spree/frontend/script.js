@@ -43,31 +43,37 @@ $(document).ready(function(){
         customVariantsDiv.id = "product-custom-variants";
         $(customVariantsDiv).insertAfter("#product-variants");
 
+        var labeled = [];
         var i = -1;
-        for ([key, value] of Object.entries(variants[0])){
-            i++;
-
-            var label = document.createElement("label");
-            label.setAttribute("for", "option-type-" + i);
-            label.innerHTML = key;
-
-            var select = document.createElement("select");
-            select.id = "option-type-" + i;
-            select.setAttribute("class", "optionType-select")
-
-            customVariantsDiv.appendChild(label);
-            customVariantsDiv.appendChild(select);
-
-            var values = possibleValuesFor(key);
+        variants.forEach(function(variant){
+            for ([key, value] of Object.entries(variant)){
             
-            values.forEach(function(value, index){
-                var option = document.createElement("option");
-                option.setAttribute("value", "option-value-" + index);
-                option.innerHTML = value;
-                select.appendChild(option);
-            });
+                if(!labeled.includes(key)){
+                    i++;
+                    labeled.push(key);
 
-        }
+                    var label = document.createElement("label");
+                    label.setAttribute("for", "option-type-" + i);
+                    label.innerHTML = key;
+        
+                    var select = document.createElement("select");
+                    select.id = "option-type-" + i;
+                    select.setAttribute("class", "optionType-select")
+        
+                    customVariantsDiv.appendChild(label);
+                    customVariantsDiv.appendChild(select);
+        
+                    var values = possibleValuesFor(key);
+                    
+                    values.forEach(function(value, index){
+                        var option = document.createElement("option");
+                        option.setAttribute("value", "option-value-" + index);
+                        option.innerHTML = value;
+                        select.appendChild(option);
+                    });
+                }
+            }
+        });
 
         $(".optionType-select").change(function(){
             var optionType = $("label[for=" + $(this).attr("id") + "]").html();
@@ -101,13 +107,14 @@ $(document).ready(function(){
                     var toSelect = $(this).children('option:not([disabled]):first').val();
                     $(this).val(toSelect);
                 }
-    
+
                 if(disabled){
                     $(this).attr("disabled", true);
                 }else{
                     $(this).removeAttr("disabled");
                 }
             });
+            
             var myCurrentVariant = currentVariant();
             $('#product-variants li').each(function(){
                 var previous;
@@ -115,7 +122,6 @@ $(document).ready(function(){
                     $(this).find('input').click();
                 }
             });
-    
         });
     
         setTimeout(function(){
@@ -148,26 +154,33 @@ $(document).ready(function(){
             
             myVariant[optionType] = optionValue;
         });
-        
-        var theVariant = variants.filter(function(variant){
-            var pass = true;
-            for ([key, value] of Object.entries(variant)){
-                if(myVariant[key] != value){
-                    pass = false;
-                }
-            }
-            return pass;
-        });
 
-        return variantToString(theVariant[0]);
+        for(key of Object.keys(myVariant)){
+            if(typeof myVariant[key] == "undefined"){
+                delete myVariant[key];
+            }
+        }
+
+        return variantToString(myVariant);
     }
 
     function variantToString(variant){
         var str = "";
+        var length = Object.keys(variant).length;
+        var i = 0;
         for ([key, value] of Object.entries(variant)){
-            str = str + key + ": " + value + ", ";
+            if(length >= 3 && i == length - 1){
+                str = str + " et " + key + ": " + value;
+            }else{
+                str = str + ", " + key + ": " + value;
+            }
+            i++;
         }
-        return str.slice(0, -2);
+
+        if(str.substring(0,2) == ", "){
+            str = str.substring(2);
+        }
+        return str;
     }
 
 });
