@@ -68,7 +68,7 @@
                   option = option_value.presentation_with_option_type.split(" - ")
                   if option[0] == "Color"
                   %>
-                      <button style="background-color: <%= option_value.name %>"class="shirt <%= variant.id %>"></button>
+                      <button data-color="<%= option_value.name %>"class="shirt <%= variant.id %>"></button>
                   <%
                   end
                 end

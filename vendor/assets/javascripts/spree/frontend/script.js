@@ -21,6 +21,13 @@ $(document).ready(function(){
         $(".variant-description").each(function(){
             var variantStr = $(this).html().trim();
             var variant = variantStr.split(", ");
+            var last = variant[variant.length - 1];
+            
+            if((last.match(/: /g) || []).length == 2){
+                variant.splice(-1, 1);
+                variant = variant.concat(last.split(" et "));
+            }
+
             var variantObj = new Object();
 
             var i;
@@ -91,7 +98,6 @@ $(document).ready(function(){
                     });
                 }
                 if(!$(this).val()){
-                    // alert('Cpasbon');
                     var toSelect = $(this).children('option:not([disabled]):first').val();
                     $(this).val(toSelect);
                 }
@@ -169,6 +175,11 @@ $(document).ready(function(){
 //couleurs page tous produits
 $(document).ready(function(){
 
+    $(".shirt").each(function(){
+        $(this).css("background-color", $(this).attr("data-color"));
+    });
+    
+
     $(".product-img").hide();
 
     $(".product-image").each(function(){
@@ -177,7 +188,7 @@ $(document).ready(function(){
         }).first().show();
     });
 
-    $(".shirt").click(function(){
+    $(".shirt").hover(function(){
         $(this).parents(".li-product-list").find(".product-img").hide();
         var classes = $(this).attr("class").split(/\s+/);
         var variantId = classes[classes.length -1];
