@@ -76,14 +76,30 @@ $(document).ready(function(){
         });
 
         $(".optionType-select").change(function(){
+
+            var changedId = $(this).attr("id");
+
             var optionType = $("label[for=" + $(this).attr("id") + "]").html();
             var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
             
             var filtered = variants.filter(function(variant){
                 return variant[optionType] == optionValue;
             });
-    
-            var changedId = $(this).attr("id");
+
+            $(".optionType-select").each(function(){
+                if($(this).attr("id") == changedId){
+                    return false;
+                }
+
+                optionType = $("label[for=" + $(this).attr("id") + "]").html();
+                optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
+
+                filtered = filtered.filter(function(variant){
+                    return variant[optionType] == optionValue;
+                });
+            });
+
+            var toChange = [];
     
             $(".optionType-select").each(function(){
                 var disabled = false;
@@ -104,8 +120,11 @@ $(document).ready(function(){
                     });
                 }
                 if(!$(this).val()){
-                    var toSelect = $(this).children('option:not([disabled]):first').val();
-                    $(this).val(toSelect);
+                    var toSelect = $(this).children('option:not([disabled])');
+                    if(toSelect.length > 0){
+                        $(this).val(toSelect.first().val());
+                        toChange.push(this);
+                    }
                 }
 
                 if(disabled){
@@ -121,6 +140,10 @@ $(document).ready(function(){
                 if($(this).find('.variant-description').html().trim() == myCurrentVariant){
                     $(this).find('input').click();
                 }
+            });
+
+            toChange.forEach(function(elem){
+                $(elem).trigger("change");
             });
         });
     
