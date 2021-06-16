@@ -121,3 +121,24 @@
     width: 435px !important;
     height: 55.37px !important;
   }
+  .payment_form{
+      display: flex;
+      justify-content: space-between;
+  }
+  .cardName, .cardNumber{
+    font-size: 18px !important;
+    padding: 11px 50px 11px 10px !important;
+  }
+  .cardNumber{
+    border-radius: 8.39px 0px 0px 8.39px !important;
+  }
+  .cardExpiry, .cardCode{
+    font-size: 18px !important;
+    padding: 11px 30px 11px 10px !important;
+    border-radius: 8.39px !important;
+  }
+  .payment_creditcards label{
+      font-family: 'Gilroy', sans-serif !important;
+      font-size: 14px !important;
+      padding-bottom: 0 !important;
+  }
