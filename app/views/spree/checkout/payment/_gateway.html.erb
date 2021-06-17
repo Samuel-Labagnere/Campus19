@@ -11,7 +11,12 @@
 <div class="payment_form">
   <div class="field field-required card_number" data-hook="card_number">
     <%= label_tag "card_number", "Numéro de carte" %>
-    <%= text_field_tag "#{param_prefix}[number]", '', {id: 'card_number', class: 'required cardNumber', size: 19, maxlength: 19, autocomplete: "cc-number",placeholder: "1234 1234 1234 1234", type: "tel" } %>
+    <div class="number_card">
+      <%= text_field_tag "#{param_prefix}[number]", '', {id: 'card_number', class: 'required cardNumber', size: 19, maxlength: 19, autocomplete: "cc-number",placeholder: "1234 1234 1234 1234", type: "tel" } %>
+      <div class="cadena_container"> 
+        <p><img src="<%= image_url('cadena.svg') %>" class="cadena"></p>
+      </div>
+    </div>
 
     <span id="card_type" style="display:none;">
       ( <span id="looks_like" ><%= t('spree.card_type_is') %> <span id="type"></span></span>
