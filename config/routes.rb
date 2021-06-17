@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'faq', to: 'spree/faq#index'
   get 'points-de-vente', to: 'spree/points_de_vente#index'
   get 'collections', to: "spree/collection#index"
   # This line mounts Solidus's routes at the root of your application.
