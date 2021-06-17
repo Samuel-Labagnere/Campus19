@@ -7,9 +7,6 @@
 .payment_gateway{
     width: 100%;
 }
-.payment{
-
-}
 .summary_payment{
     padding-bottom: 12px;
     font-size: 20px;
@@ -17,10 +14,6 @@
 #summary-order-total{
     font-size: 20px !important;
 }
-.coupon-code{
-    /*background-color: blueviolet;*/
-}
-
 .checkout_left{
     width: 48% !important;
 }

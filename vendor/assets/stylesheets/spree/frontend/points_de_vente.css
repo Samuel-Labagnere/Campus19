@@ -1,0 +1,57 @@
+.nos_pdv_center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.google_maps{
+    width:100%;
+    height:610px;
+    border: 0;
+    border-radius: 33px;
+}
+.nos_pdv{
+    width: 90%;
+}
+.nos_pdv h1{
+    font-size: 48px;
+    text-align: center;
+    margin: 100px 0;
+}
+.pdv_container{
+    display: flex;
+    justify-content: space-between;
+}
+.pdv{
+    background-color: #FBF5F6;
+    border-radius: 33px;
+    width: 344px;
+    padding: 30px 70px 30px 30px;
+    margin-top: 30px;
+}
+.pdv h4{
+    font-size: 24px;
+    text-align: center;
+}
+.pdv h5{
+    font-size: 16px !important;
+    margin-top: 30px;
+}
+.pdv h4, .nos_pdv h1, .pdv h5{
+    font-family: 'Gilroy', sans-serif;
+}
+
+.clock_container{
+    display: flex;
+    margin-top: 15px;
+}
+.pdv p{
+    width: 140px;
+    padding: 0;
+}
+.clock_container p{
+    width: 100%;
+    margin-left: 10px;
+}
+.pdv_contact{
+    margin-top: 15px !important;
+}
