@@ -23,7 +23,9 @@
 
 <% if products.any? %>
   <% unless current_page? (root_path) %>
-    <p class="nb_result_right"> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
+    <% if !params[:keywords].nil? && !params[:keywords].empty? %>
+      <p class="nb_result_right"> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
+    <% end %>
   <% end %>
   <ul id="products" class="inline product-listing ul-product-list" data-hook>
     <% products.each do |product| %>

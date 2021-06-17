@@ -78,3 +78,7 @@ input {
 #product-variants {
   display: none;
 }
+
+.custom.out-of-stock {
+  margin-top: 20px;
+}

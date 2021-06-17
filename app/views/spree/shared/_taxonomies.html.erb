@@ -11,10 +11,12 @@
 <!-- Add active class to list item to have it open by default ?-->
 
 <div class="details_list">
-  <div class="nb_result">
-    <h3 class="title_list research">Votre Recherche</h3> 
-    <p> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
-  </div>
+  <% if !params[:keywords].nil? && !params[:keywords].empty? %>
+        <div class="nb_result">
+          <h3 class="title_list research">Votre Recherche</h3> 
+          <p> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
+        </div>
+  <% end %>
   <h3 class="title_list">Filtre</h3>
   <details>
     <summary class="list">
