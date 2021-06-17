@@ -1,2 +1,6 @@
-<h1>Spree::Collection#index</h1>
-<p>Find me in app/views/spree/collection/index.html.erb</p>
+<div class="collections-container">
+  <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+  <% cache [I18n.locale, @collection, @taxon, max_level] do %>
+    <%= taxons_tree(@collection.root, @taxon, max_level) %>
+  <% end %>
+</div>
