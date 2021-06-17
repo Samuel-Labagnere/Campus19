@@ -2,6 +2,26 @@
   <div class="product_content" data-hook="product_show" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>
 
+    <div class="locale" style="display: none;"><%= I18n.locale %></div>
+
+    <%
+      colors = []
+
+      @product.variants_including_master.each do |variant|
+        variant.option_values.each do |option_value|
+          option = option_value.presentation_with_option_type.split(" - ")
+          if option[0] == "Color"
+            if !colors.include? option[1]
+              colors.push(option[1])
+            %>
+              <div class="color-info" data-color-name="<%= option_value.presentation %>" data-color-code="<%= option_value.name %>"></div>
+            <%
+            end
+          end
+        end
+      end
+    %>
+
     <div class="leftpart_product" data-hook="product_left_part">
       <div class="row" data-hook="product_left_part_wrap">
 
