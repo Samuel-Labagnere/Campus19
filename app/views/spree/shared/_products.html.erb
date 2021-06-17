@@ -36,6 +36,22 @@
 
         <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
 
+          <div class="for-filter">
+            <%
+
+            optionTypes = [];
+
+            product.variants_including_master.each do |variant|
+              if variant.can_supply?
+              %>
+                <div class="available-variant"><%= variant_options variant %></div>
+              <%
+              end
+            end
+            
+            %>
+          </div>
+          
           <div class="product-image"> <!-- image produit -->
             <%# link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
             <% product.variants_including_master.each do |variant| %>
