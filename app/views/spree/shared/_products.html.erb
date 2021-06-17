@@ -63,13 +63,18 @@
             <button class="shirt shirt-green"></button>
             <button class="shirt shirt-white"></button> %>
             <%
+              colors = []
+
               product.variants_including_master.each do |variant|
                 variant.option_values.each do |option_value|
                   option = option_value.presentation_with_option_type.split(" - ")
                   if option[0] == "Color"
-                  %>
+                    if !colors.include? option[1]
+                      colors.push(option[1])
+                    %>
                       <button data-color="<%= option_value.name %>"class="shirt <%= variant.id %>"></button>
-                  <%
+                    <%
+                    end
                   end
                 end
               end

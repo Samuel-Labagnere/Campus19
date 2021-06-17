@@ -17,15 +17,23 @@ $(document).ready(function(){
 
     if($(".variant-description").length > 0){
 
+        var lang = $(".locale").html();
+
         var variants = [];
         $(".variant-description").each(function(){
             var variantStr = $(this).html().trim();
             var variant = variantStr.split(", ");
             var last = variant[variant.length - 1];
-            
-            if((last.match(/: /g) || []).length == 2){
-                variant.splice(-1, 1);
-                variant = variant.concat(last.split(" et "));
+
+            if(lang == "fr"){
+                if((last.match(/: /g) || []).length == 2){
+                    variant.splice(-1, 1);
+                    variant = variant.concat(last.split(" et "));
+                }
+            }else if(lang == "en"){
+                if(variant.length > 2){
+                    variant[variant.length - 1] = last.substring(4);
+                }
             }
 
             var variantObj = new Object();
@@ -193,7 +201,11 @@ $(document).ready(function(){
         var i = 0;
         for ([key, value] of Object.entries(variant)){
             if(length >= 3 && i == length - 1){
-                str = str + " et " + key + ": " + value;
+                if(lang == "fr"){
+                    str = str + " et " + key + ": " + value;
+                }else if(lang == "en"){
+                    str = str + ", and " + key + ": " + value;
+                }
             }else{
                 str = str + ", " + key + ": " + value;
             }
