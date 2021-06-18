@@ -10,6 +10,44 @@
 
 <!-- Add active class to list item to have it open by default ?-->
 
+<%
+
+allOptionTypesAndValues = {}
+
+@products.each do |product| 
+  product.variants_including_master.each do |variant| 
+    variant.option_values.each do |option_value|
+      if allOptionTypesAndValues[option_value.option_type.presentation].nil?
+        allOptionTypesAndValues[option_value.option_type.presentation] = [option_value.presentation]
+      else
+        if !allOptionTypesAndValues[option_value.option_type.presentation].include? option_value.presentation
+          allOptionTypesAndValues[option_value.option_type.presentation].push(option_value.presentation)
+        end
+      end
+    end
+  end
+end
+
+if !allOptionTypesAndValues["Taille"].nil?
+  allOptionTypesAndValues["Taille"] = allOptionTypesAndValues["Taille"].sort_by do |taille|
+    if taille == "XS"
+      1
+    elsif taille == "S"
+      2
+    elsif taille == "M"
+      3
+    elsif taille == "L"
+      4
+    elsif taille == "XL"
+      5
+    else
+      6
+    end
+  end
+end
+
+%>
+
 <div class="details_list">
   <% if !params[:keywords].nil? && !params[:keywords].empty? %>
         <div class="nb_result">
@@ -18,7 +56,24 @@
         </div>
   <% end %>
   <h3 class="title_list">Filtre</h3>
-  <details>
+    <% allOptionTypesAndValues.each do |optionType, values| %>
+      <details>
+        <summary class="list">
+          <div class="title_summary">
+            <%= optionType %>
+            <img src="<%= image_url('up.svg') %>" class="imgRotateInvers">
+          </div>
+        </summary>
+        <% values.each do |value| %>
+          <div class="flex_li">
+            <input class="check check_color" type="checkbox"/>
+            <p><%= value %></p>
+          </div>
+        <% end %>
+      </details>
+    <% end %>
+    <!--
+    <details>
     <summary class="list">
       <div class="title_summary">
         Taille 
@@ -71,6 +126,7 @@
       <p>Bio et Vegan</p>
     </div>
   </details>
+  -->
     <details>
     <summary class="list">
       <div class="title_summary">
