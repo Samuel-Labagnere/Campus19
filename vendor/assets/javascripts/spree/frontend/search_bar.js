@@ -12,6 +12,7 @@ function extendHeader() {
   $(".blur").css("display", "block")
   $(".home-container").css("padding", "0")
   $(".logged_in").css("display", "none")
+  $("#search-bar").css("padding", "0 100px !important")
 }
 
 function reduceHeader() {
@@ -20,6 +21,7 @@ function reduceHeader() {
   $(".left-side-nav").css("display", "inline-block")
   $("#link-to-cart").css("display", "inline-block")
   $(".login").css("display", "flex")
+  $("#nav-bar").css("justify-content", "flex-start")
   $(".container").css("padding-top", "0")
   $(".homeheader").css("margin-top", "")
   $("nav").css("padding-top", "0")
@@ -27,8 +29,5 @@ function reduceHeader() {
   $(".blur").css("display", "none")
   $(".home-container").css("padding", "")
   $(".logged_in").css("display", "flex")
+  $("#search-bar").css("padding", "0 100px !important")
 }
-
-$(document).ready(function() {
-  $(".cart-info").text("Panier")
-})
