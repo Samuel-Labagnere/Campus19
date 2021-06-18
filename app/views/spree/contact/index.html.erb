@@ -3,6 +3,7 @@
 <% if(request.post?) %>
     <p>Merci, connard.</p>
     <p>Votre nom: <%= @prenom + ' ' + @nom %></p>
+    <% ContactMailer.with(prenom: @prenom, nom: @nom, email: @email, message: @message).contact_email.deliver_now %>
 <% else %>
     <%= form_with url: "/contact", method: :post do |form| %>
         <%= form.label :prenom, "Prénom:" %>
