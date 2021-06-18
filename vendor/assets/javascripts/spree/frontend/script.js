@@ -83,6 +83,14 @@ $(document).ready(function(){
             }
         });
 
+        var outOfStock = document.querySelector(".out-of-stock");
+        if(outOfStock){
+            customOutOfStock = outOfStock.cloneNode(true);
+            $(customOutOfStock).addClass("custom");
+            customVariantsDiv.appendChild(customOutOfStock);
+        }
+        
+
         $(".optionType-select").change(function(){
 
             var changedId = $(this).attr("id");
@@ -144,9 +152,15 @@ $(document).ready(function(){
             
             var myCurrentVariant = currentVariant();
             $('#product-variants li').each(function(){
-                var previous;
                 if($(this).find('.variant-description').html().trim() == myCurrentVariant){
                     $(this).find('input').click();
+                    if($(this).find('.out-of-stock').length > 0){
+                        $(".custom.out-of-stock").show();
+                        $("#add-to-cart-button").prop('disabled', true);
+                    }else{
+                        $(".custom.out-of-stock").hide();
+                        $("#add-to-cart-button").removeAttr("disabled");
+                    }
                 }
             });
 

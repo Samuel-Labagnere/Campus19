@@ -23,7 +23,9 @@
 
 <% if products.any? %>
   <% unless current_page? (root_path) %>
-    <p class="nb_result_right"> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
+    <% if !params[:keywords].nil? && !params[:keywords].empty? %>
+      <p class="nb_result_right"> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
+    <% end %>
   <% end %>
   <ul id="products" class="inline product-listing ul-product-list" data-hook>
     <% products.each do |product| %>
@@ -34,6 +36,22 @@
 
         <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
 
+          <div class="for-filter">
+            <%
+
+            optionTypes = [];
+
+            product.variants_including_master.each do |variant|
+              if variant.can_supply?
+              %>
+                <div class="available-variant"><%= variant_options variant %></div>
+              <%
+              end
+            end
+            
+            %>
+          </div>
+          
           <div class="product-image"> <!-- image produit -->
             <%# link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
             <% product.variants_including_master.each do |variant| %>

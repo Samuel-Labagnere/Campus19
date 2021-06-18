@@ -78,3 +78,11 @@ input {
 #product-variants {
   display: none;
 }
+
+.custom.out-of-stock {
+  margin-top: 20px;
+}
+
+.for-filter {
+  display: none;
+}

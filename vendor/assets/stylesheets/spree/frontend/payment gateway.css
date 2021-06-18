@@ -7,16 +7,13 @@
 .payment_gateway{
     width: 100%;
 }
-.payment{
-
-}
 .summary_payment{
-    /*background-color: white;*/
+    padding-bottom: 12px;
+    font-size: 20px;
 }
-.coupon-code{
-    /*background-color: blueviolet;*/
+#summary-order-total{
+    font-size: 20px !important;
 }
-
 .checkout_left{
     width: 48% !important;
 }
@@ -32,7 +29,7 @@
     margin-left: 0;
     background-color: #F7F7F7 !important;
     border-radius: 20px;
-    width: 48%;
+    width: 30%;
     height: fit-content;
     border: none !important;
 }
@@ -125,12 +122,29 @@
       display: flex;
       justify-content: space-between;
   }
-  .cardName, .cardNumber{
+  .cardName{
     font-size: 18px !important;
     padding: 11px 50px 11px 10px !important;
   }
   .cardNumber{
     border-radius: 8.39px 0px 0px 8.39px !important;
+    height: 46px;
+    font-size: 18px !important;
+    padding: 11px 10px 11px 10px !important;
+  }
+  .number_card{
+      display: flex;
+      height: fit-content;
+  }
+  .cadena_container{
+    border-radius: 0px 8.39px 8.39px 0px!important;
+    border: 1px solid #d9d9db;
+    background-color: #f4e2e4;
+    width: 40px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .cardExpiry, .cardCode{
     font-size: 18px !important;
