@@ -54,14 +54,6 @@ h3{
 
 
 
-
-
-.rotate{
-    transform: rotate(90deg) !important ;
-    margin-left: 10px !important;
-	
-}
-
  */
 
 .faq-title {
@@ -103,3 +95,6 @@ h3{
     display: none !important;
 }
 
+.rotate{
+    transform: rotate(-90deg) !important ;	
+}
