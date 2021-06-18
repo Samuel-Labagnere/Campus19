@@ -74,7 +74,7 @@ a.discover-button-collection {
     color: #FFFFFF !important;
     border: 2px solid #ED5466 !important;
     border-radius: 10px !important;
-    background-color: transparent !important;
+    background-color: transparent;
     transition: .3s ease-in-out;
     padding: 10px 32.5px !important;
 }
@@ -82,4 +82,8 @@ a.discover-button-collection {
 a.discover-button-collection:hover {
     background-color: #D00E25 !important;
     border: 2px solid #D00E25 !important;
+}
+
+.collection-hover {
+    background-color: #ED5466 !important;
 }
