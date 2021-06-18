@@ -86,7 +86,7 @@
               product.variants_including_master.each do |variant|
                 variant.option_values.each do |option_value|
                   option = option_value.presentation_with_option_type.split(" - ")
-                  if option[0] == "Color"
+                  if option[0] == "Couleur"
                     if !colors.include? option[1]
                       colors.push(option[1])
                     %>

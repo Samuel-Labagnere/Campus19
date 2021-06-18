@@ -187,6 +187,27 @@ $(document).ready(function(){
             }
         }
 
+        if(optionType == "Taille"){
+            values.sort(function(a, b){
+                var sizeToNum = function(size){
+                    if(size == "XS"){
+                        return 1;
+                    }else if(size == "S"){
+                        return 2;
+                    }else if(size == "M"){
+                        return 3;
+                    }else if(size == "L"){
+                        return 4;
+                    }else if(size == "XL"){
+                        return 5;
+                    }else{
+                        return 6;
+                    }
+                };
+                return sizeToNum(a) - sizeToNum(b);
+            });
+        }
+
         return values;
     }
 
@@ -250,11 +271,18 @@ $(document).ready(function(){
         }).first().show();
     });
 
-    $(".shirt").hover(function(){
+    $(".shirt").mouseover(function(){
         $(this).parents(".li-product-list").find(".product-img").hide();
         var classes = $(this).attr("class").split(/\s+/);
         var variantId = classes[classes.length -1];
         $(this).parents(".li-product-list").find(".product-img." + variantId).show();
+    });
+
+    $("div.colors").mouseleave(function(){
+        $(this).parents(".li-product-list").find(".product-img").hide();
+        $(this).parents(".li-product-list").find(".product-img").filter(function(index){
+            return $(this).find("img").length > 0
+        }).first().show();
     });
    
 });
