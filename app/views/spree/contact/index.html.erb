@@ -1,8 +1,7 @@
 <h1>Nous contacter</h1>
 
 <% if(request.post?) %>
-    <p>Merci, connard.</p>
-    <p>Votre nom: <%= @prenom + ' ' + @nom %></p>
+    <p>Votre mail a bien été envoyé. Vous recevrez une réponse d'ici les prochaines 48h.</p>
     <% ContactMailer.with(prenom: @prenom, nom: @nom, email: @email, message: @message).contact_email.deliver_now %>
 <% else %>
     <%= form_with url: "/contact", method: :post do |form| %>
