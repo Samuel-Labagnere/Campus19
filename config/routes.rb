@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'cgu', to: 'spree/cgu#index'
   get 'contact', to: 'spree/contact#index'
+  post 'contact', to: 'spree/contact#index'
   get 'support', to: 'spree/support#index'
   get 'faq', to: 'spree/faq#index'
   get 'points-de-vente', to: 'spree/points_de_vente#index'

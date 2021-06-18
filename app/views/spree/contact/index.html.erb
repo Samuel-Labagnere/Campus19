@@ -1,0 +1,22 @@
+<h1>Nous contacter</h1>
+
+<% if(request.post?) %>
+    <p>Merci, connard.</p>
+    <p>Votre nom: <%= @prenom + ' ' + @nom %></p>
+<% else %>
+    <%= form_with url: "/contact", method: :post do |form| %>
+        <%= form.label :prenom, "Prénom:" %>
+        <%= form.text_field :prenom, required: true %>
+
+        <%= form.label :nom, "Nom:" %>
+        <%= form.text_field :nom, required: true %>
+
+        <%= form.label :email, "Email:" %>
+        <%= form.text_field :email, required: true %>
+
+        <%= form.label :message, "Message:" %>
+        <%= form.text_field :message, required: true %>
+
+        <%= form.submit "Envoyer" %>
+    <% end %>
+<% end %>
