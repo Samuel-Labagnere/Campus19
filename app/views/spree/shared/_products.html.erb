@@ -22,6 +22,15 @@
 </div>-->
 
 <% if products.any? %>
+
+  <%
+
+    products = products.sort_by do |product|
+      -product.id
+    end
+  
+  %>
+
   <% unless current_page? (root_path) %>
     <% if !params[:keywords].nil? && !params[:keywords].empty? %>
       <p class="nb_result_right"> <%= t('spree.search_results', keywords: h(params[:keywords])) %> </p>
@@ -44,12 +53,14 @@
             product.variants_including_master.each do |variant|
               if variant.can_supply?
               %>
-                <div class="available-variant"><%= variant_options variant %></div>
+                <div class="available-variant"><%= custom_variant_to_string variant %></div>
               <%
               end
             end
             
             %>
+
+            <div class="available-on"><%= product.available_on %></div>
           </div>
           
           <div class="product-image"> <!-- image produit -->

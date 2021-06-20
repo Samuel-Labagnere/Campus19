@@ -24,6 +24,18 @@ module Spree
       variant.options_text
     end
 
+    def custom_variant_to_string(variant)
+      values = variant.option_values.includes(:option_type).sort_by do |option_value|
+        option_value.option_type.position
+      end
+
+      values.to_a.map! do |ov|
+        "#{ov.option_type.presentation}: #{ov.presentation}"
+      end
+
+      values.join(", ")
+    end
+
     def meta_data
       object = instance_variable_get('@' + controller_name.singularize)
       meta = {}

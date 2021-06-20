@@ -10,7 +10,7 @@
               <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => variant.price_for(current_pricing_options)  %>
               <%= label_tag "variant_id_#{ variant.id }" do %>
                 <span class="variant-description">
-                  <%= variant_options variant %>
+                  <%= custom_variant_to_string variant %>
                 </span>
                 <% if variant_price variant %>
                   <span class="price diff"><%= variant_price variant %></span>

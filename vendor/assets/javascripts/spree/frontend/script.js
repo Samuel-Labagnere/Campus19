@@ -17,34 +17,10 @@ $(document).ready(function(){
 
     if($(".variant-description").length > 0){
 
-        var lang = $(".locale").html();
-
         var variants = [];
         $(".variant-description").each(function(){
             var variantStr = $(this).html().trim();
-            var variant = variantStr.split(", ");
-            var last = variant[variant.length - 1];
-
-            if(lang == "fr"){
-                if((last.match(/: /g) || []).length == 2){
-                    variant.splice(-1, 1);
-                    variant = variant.concat(last.split(" et "));
-                }
-            }else if(lang == "en"){
-                if(variant.length > 2){
-                    variant[variant.length - 1] = last.substring(4);
-                }
-            }
-
-            var variantObj = new Object();
-
-            var i;
-            for(i = 0; i < variant.length; i++){
-                option = variant[i].split(": ");
-                variantObj[option[0]] = option[1];
-            }
-
-            variants.push(variantObj);
+            variants.push(stringToVariant(variantStr));
         });
 
         var customVariantsDiv = document.createElement("div");
@@ -173,87 +149,93 @@ $(document).ready(function(){
             $("#option-type-0").trigger("change");
         }, 1);
 
-    }
-
-    function possibleValuesFor(optionType){
-        var values = [];
-
-        var i;
-        for(i = 0; i < variants.length; i++){
-            if(typeof variants[i][optionType] != "undefined"){
-                if(!values.includes(variants[i][optionType])){
-                    values.push(variants[i][optionType]);
-                }
-            }
-        }
-
-        if(optionType == "Taille"){
-            values.sort(function(a, b){
-                var sizeToNum = function(size){
-                    if(size == "XS"){
-                        return 1;
-                    }else if(size == "S"){
-                        return 2;
-                    }else if(size == "M"){
-                        return 3;
-                    }else if(size == "L"){
-                        return 4;
-                    }else if(size == "XL"){
-                        return 5;
-                    }else{
-                        return 6;
+        function possibleValuesFor(optionType){
+            var values = [];
+    
+            var i;
+            for(i = 0; i < variants.length; i++){
+                if(typeof variants[i][optionType] != "undefined"){
+                    if(!values.includes(variants[i][optionType])){
+                        values.push(variants[i][optionType]);
                     }
-                };
-                return sizeToNum(a) - sizeToNum(b);
-            });
-        }
-
-        return values;
-    }
-
-    function currentVariant(){
-        var myVariant = new Object();
-
-        $(".optionType-select").each(function(){
-            var optionType = $("label[for=" + $(this).attr("id") + "]").html();
-            var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
-            
-            myVariant[optionType] = optionValue;
-        });
-
-        for(key of Object.keys(myVariant)){
-            if(typeof myVariant[key] == "undefined"){
-                delete myVariant[key];
-            }
-        }
-
-        return variantToString(myVariant);
-    }
-
-    function variantToString(variant){
-        var str = "";
-        var length = Object.keys(variant).length;
-        var i = 0;
-        for ([key, value] of Object.entries(variant)){
-            if(length >= 3 && i == length - 1){
-                if(lang == "fr"){
-                    str = str + " et " + key + ": " + value;
-                }else if(lang == "en"){
-                    str = str + ", and " + key + ": " + value;
                 }
-            }else{
-                str = str + ", " + key + ": " + value;
             }
-            i++;
+    
+            if(optionType == "Taille"){
+                values.sort(function(a, b){
+                    var sizeToNum = function(size){
+                        if(size == "XS"){
+                            return 1;
+                        }else if(size == "S"){
+                            return 2;
+                        }else if(size == "M"){
+                            return 3;
+                        }else if(size == "L"){
+                            return 4;
+                        }else if(size == "XL"){
+                            return 5;
+                        }else{
+                            return 6;
+                        }
+                    };
+                    return sizeToNum(a) - sizeToNum(b);
+                });
+            }
+    
+            return values;
+        }
+    
+        function currentVariant(){
+            var myVariant = new Object();
+    
+            $(".optionType-select").each(function(){
+                var optionType = $("label[for=" + $(this).attr("id") + "]").html();
+                var optionValue = $(this).children("option[value=" + $(this).val() + "]").html();
+                
+                myVariant[optionType] = optionValue;
+            });
+    
+            for(key of Object.keys(myVariant)){
+                if(typeof myVariant[key] == "undefined"){
+                    delete myVariant[key];
+                }
+            }
+    
+            return variantToString(myVariant);
         }
 
-        if(str.substring(0,2) == ", "){
-            str = str.substring(2);
-        }
-        return str;
     }
 
 });
+
+function variantToString(variant){
+    var str = "";
+    var length = Object.keys(variant).length;
+    var i = 0;
+    for ([key, value] of Object.entries(variant)){
+        str = str + ", " + key + ": " + value;
+        i++;
+    }
+
+    if(str.substring(0,2) == ", "){
+        str = str.substring(2);
+    }
+    return str;
+}
+
+function stringToVariant(str){
+    var variant = str.split(", ");
+
+    var variantObj = new Object();
+
+    var i;
+    for(i = 0; i < variant.length; i++){
+        option = variant[i].split(": ");
+        variantObj[option[0]] = option[1];
+    }
+
+    return variantObj;
+}
 
 //couleurs page tous produits
 $(document).ready(function(){
@@ -285,4 +267,110 @@ $(document).ready(function(){
         }).first().show();
     });
    
+});
+
+//filtres
+$(document).ready(function(){
+
+    if($(".details_list").length > 0){
+
+        var productsFilter = new Object();
+    
+        $(".filterCheck").change(function(){
+            $(".filterContainer").each(function(){
+                var optionType = $(this).find(".title_summary").text().trim();
+                var selected = new Array();
+                $(this).find("input:checked").each(function(){
+                    selected.push($(this).next("p").html());
+                });
+                productsFilter[optionType] = selected;
+            });
+    
+            $(".li-product-list").hide();
+    
+            $(".li-product-list").filter(function(){
+                var bool = false;
+                $(this).find(".available-variant").each(function(){
+                    var variant = stringToVariant($(this).html());
+                    if(variantMatchesFilter(variant, productsFilter)){
+                        bool = true;
+                        return false;
+                    }
+                });
+                return bool;
+            }).show();
+    
+        });
+    
+        function variantMatchesFilter(variant, filter){
+            for([optionType, values] of Object.entries(filter)){
+                var i, bool = false;
+    
+                if(values.length === 0){
+                    bool = true;
+                }else{
+                    for(i = 0; i < values.length; i++){
+                        if(variant[optionType] === values[i]){
+                            bool = true;
+                            break;
+                        }
+                    }
+                }
+    
+                if(!bool){
+                    return false;
+                }
+            }
+            return true;
+        }
+    
+        var productsDOM = Array.from(document.querySelectorAll(".li-product-list"));
+    
+        $(".orderBy .check").change(function(){
+            if(!$(this).is(":checked")){
+                $(this).prop("checked", true);
+            }else{
+                var checked = this;
+                $(".orderBy .check").filter(function(){
+                    return this != checked;
+                }).prop("checked", false);
+    
+                productsDOM.sort(function(a, b){
+                    aNum = parseInt(a.id.substring(8));
+                    bNum = parseInt(b.id.substring(8));
+    
+                    if(checked.id == "orderBy-new"){
+                        return bNum - aNum;
+                    }else{
+                        aPrice = parseFloat($(a).find(".price.selling").attr("content"));
+                        bPrice = parseFloat($(b).find(".price.selling").attr("content"));
+        
+                        if(checked.id == "orderBy-ascending"){
+                            var diff = aPrice - bPrice;
+                            if(diff === 0){
+                                return bNum - aNum;
+                            }else{
+                                return diff;
+                            }
+                        }
+        
+                        if(checked.id == "orderBy-descending"){
+                            var diff = bPrice - aPrice;
+                            if(diff === 0){
+                                return bNum - aNum;
+                            }else{
+                                return diff;
+                            }
+                        }
+                    }
+                });
+    
+                productsDOM.forEach(function(li, index){
+                    $(".li-product-list").eq(index).before(li);
+                });
+            }
+        });
+        
+    }
+
 });
