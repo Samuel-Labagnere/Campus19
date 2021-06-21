@@ -111,6 +111,11 @@ tr.line-item td a img{
 td.cart-item-image a img{
     width: 250px;
 }
+tr.line-item td a.delete img{
+    position: absolute;
+    width: 20px;
+    margin: 1em;
+}
 
 .line_item_quantity{
     text-align: center;
