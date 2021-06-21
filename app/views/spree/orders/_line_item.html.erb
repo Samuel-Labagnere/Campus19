@@ -2,6 +2,7 @@
 <%= order_form.fields_for :line_items, line_item do |item_form| -%>
   <tr class="<%= cycle('', 'alt') %> line-item">
     <td class="cart-item-image" data-hook="cart_item_image">
+      <%= link_to image_tag('icons/delete.png'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
       <%= link_to(render('spree/shared/image', class:"product_img_cart",
                          image: (variant.gallery.images.first || variant.product.gallery.images.first),
                          size: :small), variant.product)%>
@@ -28,7 +29,7 @@
     <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
     </td>
     <td class="cart-item-delete" data-hook="cart_item_delete">
-    <%= link_to image_tag('icons/delete.png'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
+    
     </td>-->
   </tr>
 <% end -%>

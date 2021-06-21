@@ -11,7 +11,7 @@ class ContactMailer < ApplicationMailer
         @prenom = params[:prenom]
         @nom = params[:nom]
         @email = params[:email]
-        @sujet = sujet[:sujet]
+        @sujet = params[:sujet]
         @message = params[:message]
 
         mail(to: 'ecommerce.campus19@gmail.com', subject: '[CONTACT] ' + @prenom + ' ' + @nom, body: '[' + @sujet + ']' + @message)

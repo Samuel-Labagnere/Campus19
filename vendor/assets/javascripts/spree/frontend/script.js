@@ -10,6 +10,10 @@ $(document).ready(function() {
     }, () => {
         $('.category-btn').last().css('background-color', '')
     })
+
+    if($(window).height() > $('footer').position().top) {
+        $('footer.container').css({"position": "absolute", "bottom": "0"})
+    }
 })
 
 //variantes custom
