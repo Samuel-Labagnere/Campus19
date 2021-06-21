@@ -1,0 +1,29 @@
+<h1>Support,</h1>
+<p>Comment pouvons-nous vous aider ?</p>
+
+<% if(request.post?) %>
+    <p>Votre mail a bien été envoyé. Vous recevrez une réponse d'ici les prochaines 48h.</p>
+    <% ContactMailer.with(prenom: @prenom, nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
+<% else %>
+<%
+    @listeSujets = ['Cas 1', 'Cas 2', 'Cas 3', 'Cas 4', 'Cas 5', 'Cas 6']
+%>
+    <%= form_with url: "/contact", method: :post do |form| %>
+        <%= form.label :prenom, "Prénom:" %>
+        <%= form.text_field :prenom, required: true %>
+
+        <%= form.label :nom, "Nom:" %>
+        <%= form.text_field :nom, required: true %>
+
+        <%= form.label :email, "Email:" %>
+        <%= form.text_field :email, required: true %>
+
+        <%= form.label :sujet, "Sujet:" %>
+        <%= form.select :sujet, @listeSujets.each, required: true %>
+
+        <%= form.label :message, "Message:" %>
+        <%= form.text_field :message, required: true %>
+
+        <%= form.submit "Envoyer" %>
+    <% end %>
+<% end %>
