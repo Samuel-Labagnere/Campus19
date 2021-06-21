@@ -92,10 +92,6 @@ input#coupon_code{
     background-color: #ca4757;
 }
 
-table#cart-detail{
-    width: 55%;
-}
-
 tr.line-item{
     background-color: transparent;
     display: inline-block;
