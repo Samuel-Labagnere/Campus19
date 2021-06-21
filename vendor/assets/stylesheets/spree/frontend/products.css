@@ -164,3 +164,7 @@ background-color: #E6E8EB;
 .img-shirt-black {
 display: none;
 }
+
+.shirt{
+    border: 0.4px solid black;
+}
