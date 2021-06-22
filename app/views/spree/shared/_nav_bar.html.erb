@@ -1,5 +1,6 @@
 <nav id="top-nav-bar" class="columns ten">
   <ul id="nav-bar" class="inline" data-hook>
+  <div class="nav_flex_end">
     <li class="left-side-nav"><a href="/collections">Collection</a></li>
     <li class="left-side-nav"><a href="/t/categories/vetements">Nouveautés</a></li>
     <li class="left-side-nav"><a href="/t/categories/vetements/sweats">Sweat</a></li>
@@ -16,13 +17,16 @@
         <span class="cross-line cross-line-2"></span>
       </button>
     </li>
-    <%= render 'spree/shared/login_bar_items' %>
-    <li id="link-to-cart" data-hook>
+    </div>
+    <div class="nav_flex_end">
+      <%= render 'spree/shared/login_bar_items' %>
+      <li id="link-to-cart" data-hook>
       <noscript>
         <%= link_to t('Panier'), spree.cart_path %>
       </noscript>
       &nbsp;
     </li>
+    </div>
   </ul>
     <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
 </nav>
