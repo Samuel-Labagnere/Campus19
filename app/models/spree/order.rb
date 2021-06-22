@@ -44,8 +44,8 @@ module Spree
     alias :display_ship_total :display_shipment_total
 
     checkout_flow do
-      go_to_state :address
       go_to_state :delivery
+      go_to_state :address
       go_to_state :payment, if: ->(order) { order.payment_required? }
       go_to_state :confirm
     end
