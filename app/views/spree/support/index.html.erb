@@ -4,13 +4,12 @@
 
 <% if(request.post?) %>
     <p>Votre mail a bien été envoyé. Vous recevrez une réponse d'ici les prochaines 48h.</p>
-    <% ContactMailer.with(prenom: @prenom, nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
+    <% ContactMailer.with(nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
 <% else %>
 <%
     @listeSujets = ['Cas 1', 'Cas 2', 'Cas 3', 'Cas 4', 'Cas 5', 'Cas 6']
 
     @userEmail = ""
-    @userPrenom = ""
     @userNom = ""
     if(spree_current_user)
         @userEmail = spree_current_user.email
@@ -19,11 +18,7 @@
         end
     end
 %>
-    <%= form_with url: "/contact", class: "support-form", method: :post do |form| %>
-        <div>
-            <%= form.label :prenom, "Prénom:" %>
-            <%= form.text_field :prenom, required: true, value: @userPrenom %>
-        </div>
+    <%= form_with url: "/support", class: "support-form", method: :post do |form| %>
         <div>
             <%= form.label :nom, "Nom:" %>
             <%= form.text_field :nom, required: true, value: @userNom %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'spree/contact#index'
   post 'contact', to: 'spree/contact#index'
   get 'support', to: 'spree/support#index'
+  post 'support', to: 'spree/support#index'
   get 'faq', to: 'spree/faq#index'
   get 'points-de-vente', to: 'spree/points_de_vente#index'
   get 'collections', to: "spree/collection#index"
