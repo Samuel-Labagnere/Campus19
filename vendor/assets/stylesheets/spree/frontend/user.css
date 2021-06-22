@@ -1,17 +1,17 @@
 .show_account{
     height: 65vh;
-    width: 70%;
+    width: 80%;
     margin-top: 50px;
-    margin-left: 50px;
 }
 .edit_link{
     display: flex;
-    justify-content: space-between;
-    width: 43%;
 }
 .edit_link h3{
     font-weight: normal !important;
     font-family: 'Lato' !important;
+}
+.user_button {
+    margin-left: 30px;
 }
 .email_button{
     width: 123.21px !important;
@@ -35,10 +35,16 @@
 .button_logout{
     margin-left: 20px;
 }
-.order-summary tr:nth-child(even),.order-summary th{
+.button_logout:hover {
+    color: #FFFFFF !important;
+}
+.order-summary tr:nth-child(even), .order-summary th{
     background-color: #F7F7F7;
 }
-
+.order-summary tbody td:not(:first-child) {
+    font-family: "Lato";
+    font-size: 14px;
+}
 .order-summary th:first-child{
     border-radius: 20px 0 0 0 ;
 }
@@ -59,4 +65,13 @@ table tbody tr, table tfoot tr {
     font-family: 'Gilroy', sans-serif !important;
     font-weight: bold !important;
     font-size: 16px !important;
+}
+
+.edit-account h1 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.account_edit_form {
+    padding: 0 25%;
 }

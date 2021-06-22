@@ -1,6 +1,6 @@
 <div class="show_account">
   <div class="edit_link">
-    <h3>Mon compte<%#= accurate_title %></h3>
+    <h1>Mon compte<%#= accurate_title %></h1>
     <div class="user_button">
       <button class="button button-secondary email_button"><%= link_to t('Modifer'), spree.edit_account_path %></button>
       <% if spree_current_user %>
@@ -13,7 +13,7 @@
   <div class="show_account_content">
     <div data-hook="account_summary" class="account_summary">
       <div class="user_info">
-        <p>Mon adress mail :</p>
+        <p>Mon adresse mail :</p>
         <p class="user_email"><%= @user.email %></p>
       </div>
     </div>
