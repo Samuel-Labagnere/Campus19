@@ -11,7 +11,9 @@ $(document).ready(function() {
         $('.category-btn').last().css('background-color', '')
     })
 
-    if($(window).height() > $('footer').position().top) {
+    console.log(($('footer').position().top - 140))
+
+    if($(window).height() > ($('footer').position().top + 140)) {
         $('footer.container').css({"position": "absolute", "bottom": "0"})
     }
 })
