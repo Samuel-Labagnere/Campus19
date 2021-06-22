@@ -9,16 +9,17 @@
 
 <div class="columns omega six" data-hook="shipping_fieldset_wrapper">
   
-    <fieldset id="shipping" <% if @order.shipments.first.selected_shipping_rate.name == "Click & Collect" then %> style="display: none;" <% end %> data-hook>
+    <fieldset id="shipping" <%# if @order.shipments.first.selected_shipping_rate.name == "Click & Collect" then %>  <%# end %> data-hook>
       <%= form.fields_for :ship_address do |ship_form| %>
         <legend align="center"><%= t('spree.shipping_address') %></legend>
-        <% if @order.shipments.first.selected_shipping_rate.name != "Click & Collect" %>
+        <%# if @order.shipments.first.selected_shipping_rate.name != "Click & Collect" %>
           <div class="checkbox" data-hook="use_billing">
             <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
             <%= label_tag :order_use_billing, t('spree.use_billing_address'), id: 'use_billing' %>
           </div>
           <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
-        <% else %>
+        <%# else %>
+          <!--
           <div class="checkbox" data-hook="use_billing">
             <%= check_box_tag 'order[use_billing]', '1', false %>
             <%= label_tag :order_use_billing, t('spree.use_billing_address'), id: 'use_billing' %>
@@ -34,7 +35,8 @@
           <input type="hidden" value="33600" name="order[ship_address_attributes][zipcode]" id="order_ship_address_attributes_zipcode">
           <input type="hidden" value="06 00 00 00 00" name="order[ship_address_attributes][phone]" id="order_ship_address_attributes_phone">
           <input type="hidden" value="" name="order[ship_address_attributes][alternative_phone]" id="order_ship_address_attributes_alternative_phone">
-        <% end %>
+          -->
+        <%# end %>
       <% end %>
     </fieldset>
 
