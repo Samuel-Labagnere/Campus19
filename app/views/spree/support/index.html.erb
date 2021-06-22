@@ -7,7 +7,7 @@
     <% ContactMailer.with(nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
 <% else %>
 <%
-    @listeSujets = ['Cas 1', 'Cas 2', 'Cas 3', 'Cas 4', 'Cas 5', 'Cas 6']
+    @listeSujets = ['Erreur sur le site', 'Problème avec mon compte', 'Problème avec ma commande']
 
     @userEmail = ""
     @userNom = ""
