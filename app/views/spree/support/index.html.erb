@@ -15,11 +15,7 @@
     if(spree_current_user)
         @userEmail = spree_current_user.email
         if(!spree_current_user.bill_address_id.nil?)
-            sql = 'SELECT * FROM spree_addresses WHERE id=' + spree_current_user.bill_address_id.to_s + ';'
-            bill_array = ActiveRecord::Base.connection.execute(sql)
-            puts "AAAAAAAAAAAAAAAAA"
-            puts bill_array.inspect
-            puts "AAAAAAAAAAAAAAAAA"
+            @userNom = spree_current_user.bill_address.name
         end
     end
 %>
