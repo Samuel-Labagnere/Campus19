@@ -4,38 +4,21 @@
 
 <% if(request.post?) %>
     <p>Votre mail a bien été envoyé. Vous recevrez une réponse d'ici les prochaines 48h.</p>
-    <% ContactMailer.with(prenom: @prenom, nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
+    <% ContactMailer.with(nom: @nom, email: @email, sujet: @sujet, message: @message).support_email.deliver_now %>
 <% else %>
 <%
-    @listeSujets = ['Cas 1', 'Cas 2', 'Cas 3', 'Cas 4', 'Cas 5', 'Cas 6']
+    @listeSujets = ['Erreur sur le site', 'Problème avec mon compte', 'Problème avec ma commande', 'Autre']
 
     @userEmail = ""
-    @userPrenom = ""
     @userNom = ""
     if(spree_current_user)
         @userEmail = spree_current_user.email
         if(!spree_current_user.bill_address_id.nil?)
-            sql = 'SELECT * FROM spree_addresses WHERE id=' + spree_current_user.bill_address_id.to_s + ';'
-            bill_array = ActiveRecord::Base.connection.execute(sql)
-            puts "AAAAAAAAAAAAAAAAA"
-            puts bill_array.inspect
-            puts "AAAAAAAAAAAAAAAAA"
+            @userNom = spree_current_user.bill_address.name
         end
     end
 %>
-<%#
-if(bill_array[1].empty? || bill_array[2].empty?)
-                @userPrenom = bill_array[15]
-            else
-                @userPrenom = bill_array[1]
-                @userNom = bill_array[2]
-            end
-%>
-    <%= form_with url: "/contact", class: "support-form", method: :post do |form| %>
-        <div>
-            <%= form.label :prenom, "Prénom:" %>
-            <%= form.text_field :prenom, required: true, value: @userPrenom %>
-        </div>
+    <%= form_with url: "/support", class: "support-form", method: :post do |form| %>
         <div>
             <%= form.label :nom, "Nom:" %>
             <%= form.text_field :nom, required: true, value: @userNom %>

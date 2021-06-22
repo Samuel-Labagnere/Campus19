@@ -23,6 +23,7 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 nav#top-nav-bar ul li a {
@@ -97,4 +98,8 @@ nav#top-nav-bar ul li a {
     background-color: #fff;
     align-items: flex-start !important;
     transition: height .5s ease-in-out;
+}
+.nav_flex_end{
+    display: flex;
+    align-items: center;
 }
