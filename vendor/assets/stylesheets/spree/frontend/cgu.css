@@ -1,0 +1,15 @@
+.cgu-title, .cgu-subtitle {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.cgu-container {
+    width: 100%;
+    padding: 0 300px;
+}
+
+.cgu-container h4 {
+    font-size: 16px;
+    font-family: "Gilroy";
+    color: #000000;
+}
