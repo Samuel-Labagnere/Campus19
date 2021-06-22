@@ -19,14 +19,6 @@
         end
     end
 %>
-<%#
-if(bill_array[1].empty? || bill_array[2].empty?)
-                @userPrenom = bill_array[15]
-            else
-                @userPrenom = bill_array[1]
-                @userNom = bill_array[2]
-            end
-%>
     <%= form_with url: "/contact", class: "support-form", method: :post do |form| %>
         <div>
             <%= form.label :prenom, "Prénom:" %>
