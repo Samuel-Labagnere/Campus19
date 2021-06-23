@@ -378,3 +378,51 @@ $(document).ready(function(){
     }
 
 });
+
+//click & collect
+$(document).ready(function(){
+
+    if($("#div_address_mode").length > 0){
+
+        $('input[type=radio][name=address_mode]').change(function(){
+            if (this.value == "collect"){
+                $("#order_use_billing").prop('checked', false).trigger("change");
+                $("[data-hook=shipping_inner] input, [data-hook=shipping_inner] select").prop('disabled', true);
+                $(".hiddenAddress").prop('disabled', false);
+                $("[data-hook=shipping_inner]").hide();
+            }
+            if (this.value == "idem") {
+                $(".hiddenAddress").prop('disabled', true);
+                $("[data-hook=shipping_inner]").show();
+                $("[data-hook=shipping_inner] input, [data-hook=shipping_inner] select").prop('disabled', false);
+                $("#order_use_billing").prop('checked', true).trigger("change");
+            }
+            if (this.value == "perso"){
+                $(".hiddenAddress").prop('disabled', true);
+                $("[data-hook=shipping_inner]").show();
+                $("[data-hook=shipping_inner] input, [data-hook=shipping_inner] select").prop('disabled', false);
+                $("#order_use_billing").prop('checked', false).trigger("change");
+            }
+        });
+
+        $("input[type=radio][name=address_mode]:checked").trigger("change");
+
+    }
+
+    if($("#isClickAndCollect").length > 0){
+        if($("#isClickAndCollect").attr("data-bool") === "true"){
+            $("input[type=radio]").filter(function(){
+                return $(this).parent().children(".rate-name").html() == "Click &amp; Collect";
+            }).prop("checked", true);
+            $(".continue[type=submit]").click();
+        }else{
+            $(".shipping-method").filter(function(){
+                return $(this).find(".rate-name").html() == "Click &amp; Collect";
+            }).hide();
+            $("input[type=radio]").filter(function(){
+                return $(this).parent().children(".rate-name").html() != "Click &amp; Collect";
+            }).first().prop("checked", true);
+        }
+    }
+
+});

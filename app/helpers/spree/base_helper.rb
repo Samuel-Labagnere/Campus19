@@ -166,5 +166,34 @@ module Spree
     def plural_resource_name(resource_class)
       resource_class.model_name.human(count: Spree::I18N_GENERIC_PLURAL)
     end
+
+    def clickAndCollectAddress
+      {
+        name: "Maison des Étudiants",
+        company: "CultureCampus",
+        address1: "19 Esplanade des Antilles",
+        address2: "",
+        city: "Pessac",
+        country_id: Spree::Country.find_by(name: "France").id,
+        state_id: Spree::State.find_by(name: "Nouvelle-Aquitaine").id,
+        state_name: "Nouvelle-Aquitaine",
+        zipcode: "33600",
+        phone: "06 00 00 00 00",
+        alternative_phone: ""
+      }
+    end
+
+    def isClickAndCollectAddress(address)
+      address.name == clickAndCollectAddress[:name] &&
+      address.company == clickAndCollectAddress[:company] &&
+      address.address1 == clickAndCollectAddress[:address1] &&
+      address.address2 == clickAndCollectAddress[:address2] &&
+      address.city == clickAndCollectAddress[:city] &&
+      address.country_id == clickAndCollectAddress[:country_id] &&
+      address.state_id == clickAndCollectAddress[:state_id] && 
+      address.zipcode == clickAndCollectAddress[:zipcode] &&
+      address.phone == clickAndCollectAddress[:phone] &&
+      address.alternative_phone == clickAndCollectAddress[:alternative_phone] 
+    end
   end
 end

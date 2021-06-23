@@ -9,34 +9,34 @@
 
 <div class="columns omega six" data-hook="shipping_fieldset_wrapper">
   
-    <fieldset id="shipping" <%# if @order.shipments.first.selected_shipping_rate.name == "Click & Collect" then %>  <%# end %> data-hook>
+    <fieldset id="shipping" data-hook>
       <%= form.fields_for :ship_address do |ship_form| %>
         <legend align="center"><%= t('spree.shipping_address') %></legend>
-        <%# if @order.shipments.first.selected_shipping_rate.name != "Click & Collect" %>
-          <div class="checkbox" data-hook="use_billing">
-            <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
-            <%= label_tag :order_use_billing, t('spree.use_billing_address'), id: 'use_billing' %>
+          <div id="div_address_mode">
+            <input type="radio" id="addr_collect" name="address_mode" value="collect" checked="checked">
+            <label for="addr_collect">Click & Collect</label><br>
+            <input type="radio" id="addr_idem" name="address_mode" value="idem">
+            <label for="addr_item">Identique à l'adresse de facturation</label><br>
+            <input type="radio" id="addr_perso" name="address_mode" value="perso">
+            <label for="addr_perso">Personnalisée</label><br>
           </div>
-          <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
-        <%# else %>
-          <!--
-          <div class="checkbox" data-hook="use_billing">
+          <div class="checkbox" data-hook="use_billing" style="display: none;">
+            <%# check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
             <%= check_box_tag 'order[use_billing]', '1', false %>
             <%= label_tag :order_use_billing, t('spree.use_billing_address'), id: 'use_billing' %>
           </div>
-          <input type="hidden" value="Maison des Étudiants" name="order[ship_address_attributes][name]" id="order_ship_address_attributes_name">
-          <input type="hidden" value="CultureCampus" name="order[ship_address_attributes][company]" id="order_ship_address_attributes_company">
-          <input type="hidden" value="19 Esplanade des Antilles" name="order[ship_address_attributes][address1]" id="order_ship_address_attributes_address1">
-          <input type="hidden" value="" name="order[ship_address_attributes][address2]" id="order_ship_address_attributes_address2">
-          <input type="hidden" value="Pessac" name="order[ship_address_attributes][city]" id="order_ship_address_attributes_city">
-          <input type="hidden" value="<%= Spree::Country.find_by(name: "France").id %>" name="order[ship_address_attributes][country_id]" id="order_ship_address_attributes_country_id">
-          <input type="hidden" value="<%= Spree::State.find_by(name: "Nouvelle-Aquitaine").id %>" name="order[ship_address_attributes][state_id]" id="order_ship_address_attributes_state_id">
-          <input type="hidden" value="Nouvelle-Aquitaine" name="order[ship_address_attributes][state_name]" id="order_ship_address_attributes_state_name">
-          <input type="hidden" value="33600" name="order[ship_address_attributes][zipcode]" id="order_ship_address_attributes_zipcode">
-          <input type="hidden" value="06 00 00 00 00" name="order[ship_address_attributes][phone]" id="order_ship_address_attributes_phone">
-          <input type="hidden" value="" name="order[ship_address_attributes][alternative_phone]" id="order_ship_address_attributes_alternative_phone">
-          -->
-        <%# end %>
+          <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:name] %>" name="order[ship_address_attributes][name]" id="order_ship_address_attributes_name">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:company] %>" name="order[ship_address_attributes][company]" id="order_ship_address_attributes_company">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:address1] %>" name="order[ship_address_attributes][address1]" id="order_ship_address_attributes_address1">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:address2] %>" name="order[ship_address_attributes][address2]" id="order_ship_address_attributes_address2">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:city] %>" name="order[ship_address_attributes][city]" id="order_ship_address_attributes_city">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:country_id] %>" name="order[ship_address_attributes][country_id]" id="order_ship_address_attributes_country_id">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:state_id] %>" name="order[ship_address_attributes][state_id]" id="order_ship_address_attributes_state_id">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:state_name] %>" name="order[ship_address_attributes][state_name]" id="order_ship_address_attributes_state_name">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:zipcode] %>" name="order[ship_address_attributes][zipcode]" id="order_ship_address_attributes_zipcode">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:phone] %>" name="order[ship_address_attributes][phone]" id="order_ship_address_attributes_phone">
+          <input type="hidden" class="hiddenAddress" value="<%= clickAndCollectAddress[:alternative_phone] %>" name="order[ship_address_attributes][alternative_phone]" id="order_ship_address_attributes_alternative_phone">
       <% end %>
     </fieldset>
 
