@@ -92,3 +92,5 @@ Spree.user_class = "Spree::LegacyUser"
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
 Spree::Role.find_or_create_by(name: 'merchant')
+
+Spree::Auth::Config[:confirmable] = true
