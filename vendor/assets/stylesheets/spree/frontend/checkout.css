@@ -13,14 +13,14 @@
 }
 
 li.next, li.last, .steps li {
-    background-color: #494949 !important;
+    background-color: rgba(73, 73, 73, .5) !important;
     color: #ffffff;
     border: none;
     border-radius: 21px;
 }
 
 li.current-first, li.current, li.current-last {
-    background-color: #F7AB01 !important;
+    background-color: #494949 !important;
     border: none;
     border-radius: 21px;
 }

@@ -26,7 +26,25 @@
       </noscript>
       &nbsp;
     </li>
+    <li class="burger-menu-button" onclick="openBurger()">
+      <div class="line-burger-menu line-burger-menu-1"></div>
+      <div class="line-burger-menu line-burger-menu-2"></div>
+    </li>
     </div>
   </ul>
+  <div class="burger-menu">
+      <div class="cross-burger-menu" onclick="closeBurger()">
+        <div class="cross-line cross-line-1"></div>
+        <div class="cross-line cross-line-2"></div>
+      </div>
+    <ul class="burger-link-list">
+      <li class=""><a href="/collections">Collection</a></li>
+      <li class=""><a href="/t/categories/vetements">Nouveautés</a></li>
+      <li class=""><a href="/t/categories/vetements/sweats">Sweat</a></li>
+      <li class=""><a href="/t/categories/vetements/t-shirts">T-Shirt</a></li>
+      <li class=""><a href="/points-de-vente">Nos points de vente</a></li>
+      <%= render 'spree/shared/login_bar_items' %>
+    </ul>
+  </div>
     <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
 </nav>

@@ -23,7 +23,7 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 nav#top-nav-bar ul li a {
@@ -47,10 +47,6 @@ nav#top-nav-bar ul li a {
 
 #top-nav-bar li {
     margin-bottom: 0!important;
-}
-
-#top-nav-bar li:first-child {
-    padding-left: 50px !important;
 }
 
 #top-nav-bar li.left-side-nav {
@@ -97,9 +93,109 @@ nav#top-nav-bar ul li a {
     padding: 0 80px;
     background-color: #fff;
     align-items: flex-start !important;
-    transition: height .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 .nav_flex_end{
     display: flex;
     align-items: center;
+}
+
+#nav-bar .burger-menu-button {
+    display: none;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 40px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line-burger-menu {
+    height: 3px;
+    border-radius: 2px;
+    background-color: #202020;
+}
+
+.line-burger-menu-1 {
+    width: 35px;
+}
+
+.line-burger-menu-2 {
+    width: 20px;
+}
+
+nav .burger-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50vh;
+    background-color: #ffffff;
+    padding: 2%;
+    z-index: 5;
+    border-radius: 0 0 0 20px;
+    box-shadow: -6px 4px 4px -2px rgba(0, 0, 0, 0.25);
+}
+
+.cross-burger-menu {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #ED5466;
+    border-radius: 4px;
+}
+
+.cross-burger-menu .cross-line {
+    background-color: #ffffff;
+}
+
+.burger-link-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.burger-link-list li {
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 1360px) {
+    #top-nav-bar li.left-side-nav {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #nav-bar div:first-child li:nth-child(2), #nav-bar div:first-child li:nth-child(3), #nav-bar div:first-child li:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #nav-bar div:first-child li:nth-child(1), #nav-bar div:first-child li:nth-child(5), #nav-bar div:last-child li:first-child {
+        display: none;
+    }
+    #nav-bar {
+        justify-content: flex-end;
+    }
+    #nav-bar .burger-menu-button {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav-bar {
+        justify-content: space-between;
+    }
+
+    #search-bar {
+        padding: 0 0 0 5px !important;
+    }
+    .inputgroup {
+        width: 190px !important;
+    }
 }

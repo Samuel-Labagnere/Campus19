@@ -1,10 +1,21 @@
 <fieldset id='shipping_method' data-hook>
-  <legend align="center"><%= t('spree.delivery') %></legend>
   <div class="inner" data-hook="shipping_method_inner">
     <div id="methods">
       <%= form.fields_for :shipments do |ship_form| %>
 
         <div class="shipment">
+        <h5 class="stock-shipping-method-title"><%= t('spree.shipping_method') %></h5>
+          <ul class="radios shipping-methods">
+            <% ship_form.object.shipping_rates.each do |rate| %>
+              <li class="shipping-method">
+                <label>
+                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
+                  <span class="rate-name"><%= rate.name %></span>
+                  <span class="rate-cost"><%= rate.display_cost %></span>
+                </label>
+              </li>
+            <% end %>
+          </ul>
           <h3 class="stock-location" data-hook="stock-location">
             <%= t('spree.package_from') %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
@@ -39,18 +50,6 @@
             </tbody>
           </table>
 
-          <h5 class="stock-shipping-method-title"><%= t('spree.shipping_method') %></h5>
-          <ul class="radios shipping-methods">
-            <% ship_form.object.shipping_rates.each do |rate| %>
-              <li class="shipping-method">
-                <label>
-                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
-                  <span class="rate-name"><%= rate.name %></span>
-                  <span class="rate-cost"><%= rate.display_cost %></span>
-                </label>
-              </li>
-            <% end %>
-          </ul>
         </div>
 
       <% end %>
@@ -104,5 +103,5 @@
 <br />
 
 <div class="form-buttons" data-hook="buttons">
-  <%= submit_tag t('spree.save_and_continue'), class: 'continue button primary' %>
+  <%= submit_tag "Passer à l'étape suivante", class: 'continue button button-continue' %>
 </div>

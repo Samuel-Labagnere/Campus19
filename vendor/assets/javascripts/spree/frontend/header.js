@@ -21,7 +21,7 @@ function reduceHeader() {
   $(".left-side-nav").css("display", "inline-block")
   $("#link-to-cart").css("display", "inline-block")
   $(".login").css("display", "flex")
-  $("#nav-bar").css("justify-content", "flex-start")
+  $("#nav-bar").css("justify-content", "")
   $(".container").css("padding-top", "0")
   $(".homeheader").css("margin-top", "")
   $("nav").css("padding-top", "0")
@@ -30,4 +30,12 @@ function reduceHeader() {
   $(".home-container").css("padding", "")
   $(".logged_in").css("display", "flex")
   $("#search-bar").css("padding", "0 100px !important")
+}
+
+function openBurger() {
+  $(".burger-menu").css("display", "block")
+}
+
+function closeBurger() {
+  $(".burger-menu").css("display", "")
 }
