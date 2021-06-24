@@ -105,3 +105,5 @@
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag "Passer à l'étape suivante", class: 'continue button button-continue' %>
 </div>
+
+<div id="isClickAndCollect" data-bool="<%= isClickAndCollectAddress(@order.ship_address) %>"></div>
