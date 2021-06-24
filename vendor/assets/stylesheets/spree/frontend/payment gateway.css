@@ -24,24 +24,25 @@
     padding: 23px 52px !important;
 }
 #checkout-summary{
-    text-align: center;
     margin-top: 0;
     margin-left: 0;
     background-color: #F7F7F7 !important;
     border-radius: 20px;
-    width: 30%;
+    width: 48%;
     height: fit-content;
     border: none !important;
+    padding: 0 3% 3% 3%;
 }
-#checkout-summary h3, .payment_container h3{
-    border-bottom: none;
-    color: black;
-    font-size: 36px;
-    font-family: 'Gilroy', sans-serif;
-    padding: 20px 0;
-    text-align: center;
-    text-transform: none !important;
+#checkout-summary td {
+    padding: 10px 0;
 }
+#checkout-summary td:first-child {
+    text-align: left;
+}
+#checkout-summary td:last-child {
+    text-align: right;
+}
+
 .payment, .payment_container{
     border: none !important;
     margin-top: 0px !important;
@@ -117,42 +118,84 @@
     transition: .3s ease-in-out;
     width: 435px !important;
     height: 55.37px !important;
-  }
-  .payment_form{
-      display: flex;
-      justify-content: space-between;
-  }
-  .cardName{
-    font-size: 18px !important;
-    padding: 11px 50px 11px 10px !important;
-  }
-  .cardNumber{
-    border-radius: 8.39px 0px 0px 8.39px !important;
-    height: 46px;
-    font-size: 18px !important;
-    padding: 11px 10px 11px 10px !important;
-  }
-  .number_card{
-      display: flex;
-      height: fit-content;
-  }
-  .cadena_container{
-    border-radius: 0px 8.39px 8.39px 0px!important;
-    border: 1px solid #d9d9db;
-    background-color: #f4e2e4;
-    width: 40px;
-    height: 46px;
+}
+.payment_form{
+    display: flex;
+    justify-content: space-between;
+}
+.cardName{
+font-size: 18px !important;
+padding: 11px 50px 11px 10px !important;
+}
+.cardNumber{
+border-radius: 8.39px 0px 0px 8.39px !important;
+height: 46px;
+font-size: 18px !important;
+padding: 11px 10px 11px 10px !important;
+}
+.number_card{
+    display: flex;
+    height: fit-content;
+}
+.cadena_container{
+border-radius: 0px 8.39px 8.39px 0px!important;
+border: 1px solid #d9d9db;
+background-color: #f4e2e4;
+width: 40px;
+height: 46px;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+.cardExpiry, .cardCode{
+font-size: 18px !important;
+padding: 11px 30px 11px 10px !important;
+border-radius: 8.39px !important;
+}
+.payment_creditcards label{
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 14px !important;
+    padding-bottom: 0 !important;
+}
+
+
+.item-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary_payment h2 {
+    margin: 5% 0;
+}
+
+.list-items-summary .item-summary .product-img-cart {
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-  }
-  .cardExpiry, .cardCode{
-    font-size: 18px !important;
-    padding: 11px 30px 11px 10px !important;
-    border-radius: 8.39px !important;
-  }
-  .payment_creditcards label{
-      font-family: 'Gilroy', sans-serif !important;
-      font-size: 14px !important;
-      padding-bottom: 0 !important;
-  }
+    width: 13vw;
+    height: 13vw;
+    padding: 2vw;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .35);
+}
+
+.list-items-summary .item-summary img {
+    width: 100%;
+}
+
+.list-items-summary li:not(:last-child) {
+    margin: 4% 0;
+}
+
+.list-items-summary .item-summary div p {
+    text-align: right;
+}
+
+.list-items-summary .item-summary div p a {
+    margin-right: 15px;
+}
+
+.list-items-summary .item-summary div p span {
+    font-family: "Gilroy";
+}

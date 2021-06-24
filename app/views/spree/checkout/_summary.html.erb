@@ -1,6 +1,6 @@
 <div class="summary_payment">
 
-<h3>Récapitulatif</h3>
+<h2>Récapitulatif</h2>
 
 <table data-hook="order_summary">
   <tbody>
@@ -72,6 +72,24 @@
     </tr>
   </tbody>
 </table>
+<% puts "hello" %>
+<% puts order.shipments.length.inspect %>
+
+<h2>Vos articles</h2>
+
+<ul class="list-items-summary">
+  <% order.line_items.each do |line_item| %>
+    <% variant = line_item.variant -%>
+    <li class="item-summary">
+      <%= link_to(render('spree/shared/image', image: (variant.gallery.images.first || variant.product.gallery.images.first),
+                          size: :small), variant.product, class:"product-img-cart")%>
+      <div>
+        <p class="p_cart"><%= link_to line_item.name, product_path(variant.product) %> <%= line_item.single_money.to_html %></p>
+        <p class="p_cart custom_variants_display"><%= variant.options_text %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
 <% if order.state == 'payment' %>
   <%= render 'coupon_code', order: order %>
 <% end %>
