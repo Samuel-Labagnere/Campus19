@@ -27,16 +27,32 @@ module Spree
 
     # Updates the order and advances to the next state (when possible.)
     def update
+      ## stripe
+      # if @order.state == "payment"
+      #   $intent = Stripe::PaymentIntent.retrieve($intent.id)
+      # end
+      # if @order.state == "payment" && $intent.status != "succeeded"
+      #   render :edit
+      # else
+      #   if update_order
 
-      if params[:state] == "payment"
-        Stripe.api_key = Rails.application.credentials[:stripe_private_key]
-        # intent = Stripe::PaymentIntent.create({
-        #   amount: @order.total,
-        #   currency: 'eur',
-        #   # Verify your integration in this guide by including this parameter
-        #   metadata: {integration_check: 'accept_a_payment'},
-        # })
-      end
+      #     assign_temp_address
+  
+      #     unless transition_forward
+      #       redirect_on_failure
+      #       return12
+      #     end
+  
+      #     if @order.completed?
+      #       finalize_order
+      #     else
+      #       send_to_next_state
+      #     end
+  
+      #   else
+      #     render :edit
+      #   end
+      # end
 
       if update_order
 
@@ -44,7 +60,7 @@ module Spree
 
         unless transition_forward
           redirect_on_failure
-          return
+          return12
         end
 
         if @order.completed?
@@ -195,6 +211,7 @@ module Spree
     end
 
     def before_address
+      $intent = nil
       @order.assign_default_user_addresses
       # If the user has a default address, the previous method call takes care
       # of setting that; but if he doesn't, we need to build an empty one here
@@ -203,6 +220,7 @@ module Spree
     end
 
     def before_delivery
+      $intent = nil
       return if params[:order].present?
 
       packages = @order.shipments.map(&:to_package)
@@ -222,6 +240,16 @@ module Spree
         @wallet_payment_sources = try_spree_current_user.wallet.wallet_payment_sources
         @default_wallet_payment_source = @wallet_payment_sources.detect(&:default) ||
                                          @wallet_payment_sources.first
+      end
+
+      Stripe.api_key = Rails.application.credentials[:stripe_private_key]
+      if $intent.nil?
+        $intent = Stripe::PaymentIntent.create({
+          amount: Integer(@order.total*100),
+          currency: 'eur',
+          # Verify your integration in this guide by including this parameter
+          metadata: {integration_check: 'accept_a_payment'},
+        })
       end
     end
 

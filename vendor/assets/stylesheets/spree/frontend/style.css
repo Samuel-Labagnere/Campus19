@@ -86,3 +86,7 @@ input {
 .for-filter {
   display: none;
 }
+
+#payment-form {
+  display: none;
+}

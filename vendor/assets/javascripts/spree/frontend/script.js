@@ -426,3 +426,62 @@ $(document).ready(function(){
     }
 
 });
+
+//stripe
+$(document).ready(function(){
+
+    if($("#checkout_form_payment").length > 0){
+
+        var stripe = Stripe('pk_test_51Iv1qbEjWYSfOapv4EgMQ0JNjeaT7IfGcabreWySRSkZ6Nu7MdYGQgmoIQo7wa5kOu1nUSspxTAJ5coeYqLEQxio00ZT76x93F');
+
+        var stripeElements = stripe.elements();
+        var stripeStyle = {
+            base: {
+                color: "#32325d",
+            }
+        };
+
+        var clientSecret = $("#payment-form").attr("data-secret");
+
+        var stripeCard = stripeElements.create("card", { style: stripeStyle });
+        stripeCard.mount("#card-element");
+
+        var form = document.getElementById('payment-form');
+
+        form.addEventListener('submit', function(ev) {
+            ev.preventDefault();
+            // If the client secret was rendered server-side as a data-secret attribute
+            // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
+            stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: stripeCard,
+                    billing_details: {
+                        name: 'Jenny Rosen'
+                    }
+                }
+            }).then(function(result) {
+                if (result.error) {
+                    // Show error to your customer (e.g., insufficient funds)
+                    console.log(result.error.message);
+                } else {
+                    // The payment has been processed!
+                    if (result.paymentIntent.status === 'succeeded') {
+                        // Show a success message to your customer
+                        // There's a risk of the customer closing the window before callback
+                        // execution. Set up a webhook or plugin to listen for the
+                        // payment_intent.succeeded event that handles any business critical
+                        // post-payment actions.
+                        console.log("yes");
+                    }
+                }
+            });
+        });
+
+        $("iframe").filter(function(){
+            $(this).attr("name").indexOf("__privateStripeFrame") === 0;
+        }).hide();
+        
+    }
+
+    
+})
