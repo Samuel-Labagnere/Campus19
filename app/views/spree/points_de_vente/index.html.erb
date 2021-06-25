@@ -4,20 +4,22 @@
   <iframe class="google_maps" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOF7_zsR773z2Kwz4qETNmwTlpCmQ0XvQ&q=Maison+des+etudiants,Pessac+France">
   </iframe>
 
+  <% clickCollect = clickAndCollectAddress %>
   <div class="pdv_container">
     <div class="pdv">
       <h4>Point de vente #1</h4>
-      <h4>NOM LIEU</h4>
-      <h5>Bordeaux</h5>
-      <p>Avenue Gustave Eiffeil 33600 Pessac</p>
+      <h4><%= clickCollect[:name] %></h4>
+      <h5><%= clickCollect[:city] %></h5>
+      <p><%= clickCollect[:address1] + " " + clickCollect[:address2] + " " + clickCollect[:zipcode] + " " + clickCollect[:city] %></p>
       <div class="clock_container">
         <img src="<%= image_url('clock.svg') %>" class="clock">
         <p style="color:red !important;">Ouvert tous les jours de 9h à 18h</p>
       </div>
       <h5 class="pdv_contact">Contact</h5>
-      <p>michelmontagne@bordeaux.com</p>
-      <p>Tél : +33 1 01 01 01 01</p>
+      <p>michelmontaigne@bordeaux.com</p>
+      <p>Tél : <%= clickCollect[:phone] %></p>
     </div>
+    <!--
     <div class="pdv">
       <h4>Point de vente #2</h4>
       <h4>NOM LIEU</h4>
@@ -44,6 +46,7 @@
       <p>michelmontagne@bordeaux.com</p>
       <p>Tél : +33 1 01 01 01 01</p>
     </div>
+    -->
   </div>
 
 </div>

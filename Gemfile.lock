@@ -377,6 +377,7 @@ GEM
     state_machines-activerecord (0.8.0)
       activerecord (>= 5.1)
       state_machines-activemodel (>= 0.8.0)
+    stripe (5.34.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.1.0)
@@ -436,6 +437,7 @@ DEPENDENCIES
   solidus_auth_devise
   solidus_i18n!
   spring
+  stripe
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

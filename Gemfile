@@ -68,3 +68,5 @@ gem 'bcrypt_pbkdf'
 gem 'solidus_i18n', github: 'solidusio/solidus_i18n'
 gem 'rails-i18n'
 gem 'kaminari-i18n'
+
+gem 'stripe'

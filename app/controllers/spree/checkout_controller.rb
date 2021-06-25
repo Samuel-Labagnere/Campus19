@@ -27,6 +27,17 @@ module Spree
 
     # Updates the order and advances to the next state (when possible.)
     def update
+
+      if params[:state] == "payment"
+        Stripe.api_key = Rails.application.credentials[:stripe_private_key]
+        # intent = Stripe::PaymentIntent.create({
+        #   amount: @order.total,
+        #   currency: 'eur',
+        #   # Verify your integration in this guide by including this parameter
+        #   metadata: {integration_check: 'accept_a_payment'},
+        # })
+      end
+
       if update_order
 
         assign_temp_address
